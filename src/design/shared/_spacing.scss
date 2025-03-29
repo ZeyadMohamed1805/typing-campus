@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+$spacings: (
+    "xs": $spacing-xs,
+    "sm": $spacing-sm,
+    "md": $spacing-md,
+    "lg": $spacing-lg,
+    "xl": $spacing-xl,
+    "xxl": $spacing-xxl
+);

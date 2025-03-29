@@ -1,0 +1,13 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@mixin fadeIn($time: 0.5s) {
+    animation: fadeIn $time ease-in-out;
+}
