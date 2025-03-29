@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Typing Campus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Typing Campus is a high-performance typing test platform built with modern web technologies. It features interactive typing challenges, real-time analytics, leaderboards, and customizable themes.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
+- **Vite** – Fast development and optimized builds
+- **React** – Component-based UI development
+- **TypeScript** – Type-safe JavaScript
+- **SCSS Modules** – Scoped styling
+- **React Router** – Client-side navigation
+- **Prettier** – Code formatting
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Installation
+Clone the repository and install dependencies:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-    extends: [
-        // Remove ...tseslint.configs.recommended and replace with this
-        ...tseslint.configs.recommendedTypeChecked,
-        // Alternatively, use this for stricter rules
-        ...tseslint.configs.strictTypeChecked,
-        // Optionally, add this for stylistic rules
-        ...tseslint.configs.stylisticTypeChecked,
-    ],
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
+```sh
+git clone https://github.com/yourusername/typing-campus.git
+cd typing-campus
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config({
-    plugins: {
-        // Add the react-x and react-dom plugins
-        "react-x": reactX,
-        "react-dom": reactDom,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended typescript rules
-        ...reactX.configs["recommended-typescript"].rules,
-        ...reactDom.configs.recommended.rules,
-    },
-});
+## 🏃 Running the Project
+Start the development server:
+```sh
+npm run dev
 ```
+
+The app will be available at [http://localhost:5173](http://localhost:5173) (default Vite port).
+
+## 🚀 Production Build
+To create an optimized production build:
+```sh
+npm run build
+```
+
+Serve the build locally to test:
+```sh
+npm run preview
+```
+
+## 🎨 Styling with SCSS Modules
+SCSS modules provide scoped styling. Example usage:
+```tsx
+import styles from './Button.module.scss';
+
+const Button = () => <button className={styles.button}>Click Me</button>;
+```
+
+## 🛠 Prettier Setup (Code Formatting)
+Prettier is used for consistent formatting. Run manually:
+```sh
+npm run beautify
+```
+Enable **Format on Save** in VS Code settings to automate this.
+
+## 🔀 Routing with React Router
+Routes are managed using **React Router**. Example:
+```tsx
+import { Routes, Route } from 'react-router-dom';
+
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/test" element={<TypingTest />} />
+  </Routes>
+);
+```
+
+## 📜 License
+This project is licensed under the **Apache 2.0 License**.
+
+## 🤝 Contributing
+Feel free to submit issues or pull requests to improve the project!
+
+## 📧 Contact
+For inquiries, contact **zeyadmohamed.bus.acc@gmail.com**.
+
