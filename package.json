@@ -9,7 +9,8 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "beautify": "npx prettier --write .",
-        "generate:component": "tsx scripts/generate-component.ts"
+        "generate:component": "tsx scripts/generate-component.ts",
+        "g:c": "tsx scripts/generate-component.ts"
     },
     "dependencies": {
         "react": "^19.0.0",
