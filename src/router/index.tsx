@@ -3,9 +3,7 @@ import { ApplicationRoutes } from "./router.mappers";
 
 const Router = () => (
     <BrowserRouter>
-        <BrowserRoutes>
-            {ApplicationRoutes}
-        </BrowserRoutes>
+        <BrowserRoutes>{ApplicationRoutes}</BrowserRoutes>
     </BrowserRouter>
 );
 
