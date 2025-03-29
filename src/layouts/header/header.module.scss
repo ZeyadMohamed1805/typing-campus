@@ -1,2 +1,95 @@
+@use "../../design/shared/variables" as *;
+@use "../../design/shared/colors" as *;
+@use "../../design/shared/shadows" as *;
+@use "../../design/shared/animations" as *;
+
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+    background-color: $primary-color;
+    color: $text-light-color;
+    box-shadow: $shadow-md;
+    transition:
+        background-color 0.3s ease-in-out,
+        transform 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+.logo {
+    font-size: $font-xl;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.nav {
+    ul {
+        list-style: none;
+        display: flex;
+        gap: $spacing-lg;
+        padding: 0;
+        margin: 0;
+
+        li {
+            a {
+                text-decoration: none;
+                color: $text-light-color;
+                font-size: $font-md;
+                font-weight: 500;
+                position: relative;
+                transition:
+                    color 0.3s ease,
+                    transform 0.2s ease;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -4px;
+                    width: 0;
+                    height: 2px;
+                    background-color: $secondary-color;
+                    transition:
+                        width 0.3s ease,
+                        left 0.3s ease;
+                }
+
+                &:hover {
+                    color: $secondary-color;
+                    transform: translateY(-2px);
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: $spacing-sm;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-sm;
+    }
 }

@@ -10,7 +10,9 @@
         "preview": "vite preview",
         "beautify": "npx prettier --write .",
         "generate:component": "tsx scripts/generate-component.ts",
-        "g:c": "tsx scripts/generate-component.ts"
+        "generate:provider": "tsx scripts/generate-provider.ts",
+        "g:c": "tsx scripts/generate-component.ts",
+        "g:p": "tsx scripts/generate-provider.ts"
     },
     "dependencies": {
         "react": "^19.0.0",
