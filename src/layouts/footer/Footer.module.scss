@@ -52,7 +52,7 @@
         opacity: 0.8;
     }
 
-    @include min_breakpoint($breakpoint-md) {
+    @include min-breakpoint($breakpoint-md) {
         text-align: left;
         padding: 1rem 2rem;
 
