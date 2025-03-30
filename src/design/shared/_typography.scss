@@ -1,11 +1,11 @@
 @use "variables" as *;
 
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
 
 $font-weights: (
     "light": 300,
     "regular": 400,
     "medium": 500,
-    "bold": 700
+    "bold": 700,
 );

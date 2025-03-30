@@ -1,7 +1,8 @@
 import "../design/index.scss";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Router from "../router";
+import Router from "../router/Router";
+import Provider from "../providers";
 
 const rootElement = document.getElementById("root");
 
@@ -11,6 +12,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
     <StrictMode>
-        <Router />
+        <Provider>
+            <Router />
+        </Provider>
     </StrictMode>
 );

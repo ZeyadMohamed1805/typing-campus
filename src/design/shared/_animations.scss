@@ -1,13 +1,17 @@
-@keyframes fadeIn {
+@keyframes slide-in {
     from {
-        opacity: 0;
+        transform: translateX(100%);
     }
-
     to {
-        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-@mixin fadeIn($time: 0.5s) {
-    animation: fadeIn $time ease-in-out;
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
