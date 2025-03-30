@@ -19,7 +19,7 @@ const [componentName, targetDir] = args;
 const componentPath: string = path.join(
     process.cwd(),
     targetDir,
-    componentName
+    componentName.toLowerCase()
 );
 
 // Ensure the directory exists
