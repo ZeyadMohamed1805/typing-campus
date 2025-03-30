@@ -43,7 +43,7 @@ const scssContent: string = `.${componentName} {
 
 // Create the component files
 fs.writeFileSync(
-    path.join(componentPath, `${componentName}.component.tsx`),
+    path.join(componentPath, `${componentName}.tsx`),
     tsxContent,
     "utf8"
 );

@@ -7,89 +7,105 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $spacing-md $spacing-lg;
-    background-color: $primary-color;
+    padding: 1rem 2rem;
+    background: $primary-color;
     color: $text-light-color;
-    box-shadow: $shadow-md;
-    transition:
-        background-color 0.3s ease-in-out,
-        transform 0.3s ease;
+    position: relative;
 
-    &:hover {
-        background-color: $primary-color;
-        transform: translateY(-2px);
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
     }
-}
 
-.logo {
-    font-size: $font-xl;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    .menuIcon {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
 
-    &:hover {
-        transform: scale(1.1);
+        span {
+            width: 25px;
+            height: 3px;
+            background: $text-light-color;
+            transition: transform 0.3s ease;
+        }
     }
-}
 
-.nav {
-    ul {
-        list-style: none;
-        display: flex;
-        gap: $spacing-lg;
-        padding: 0;
-        margin: 0;
+    .nav {
+        ul {
+            display: flex;
+            gap: 1.5rem;
 
-        li {
-            a {
-                text-decoration: none;
+            li {
+                list-style: none;
                 color: $text-light-color;
-                font-size: $font-md;
-                font-weight: 500;
-                position: relative;
+                cursor: pointer;
+                font-size: 1rem;
                 transition:
                     color 0.3s ease,
-                    transform 0.2s ease;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 50%;
-                    bottom: -4px;
-                    width: 0;
-                    height: 2px;
-                    background-color: $secondary-color;
-                    transition:
-                        width 0.3s ease,
-                        left 0.3s ease;
-                }
+                    transform 0.3s ease;
 
                 &:hover {
                     color: $secondary-color;
-                    transform: translateY(-2px);
+                    transform: scale(1.1);
                 }
 
-                &:hover::after {
-                    width: 100%;
-                    left: 0;
+                a {
+                    text-decoration: none;
                 }
             }
         }
     }
-}
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: $spacing-sm;
+    // Responsive Styles
+    @media (max-width: 768px) {
+        .menuIcon {
+            display: flex;
+        }
+
+        .nav {
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 60%;
+            height: 100vh;
+            background: $gray-dark-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .nav.open {
+            right: 0;
+            animation: slide-in 0.4s ease-in-out;
+        }
+
+        .nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: fade-in 0.5s ease-in-out;
+
+            li {
+                &:hover {
+                    color: $text-light-color;
+                }
+            }
+        }
     }
 
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-sm;
+    // Overlay effect for menu
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        animation: fade-in 0.3s ease-in-out;
     }
 }
