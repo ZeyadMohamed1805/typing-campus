@@ -2,6 +2,7 @@
 @use "../../../design/shared/breakpoints" as *;
 @use "../../../design/shared/colors" as *;
 @use "../../../design/shared/typography" as *;
+@use "../../../design/shared/spacing" as *;
 @use "../../../design/components/buttons" as *;
 
 .hero {
@@ -11,52 +12,47 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        $primary-color 10%,
-        $secondary-color 90%
-    );
+    background: linear-gradient(to bottom, $primary-color, $secondary-color);
     color: $text-light-color;
-    animation: fade-in 0.8s ease-in-out;
-    padding: 0 4rem;
+    @include animation-fade-in;
+    padding: 0 $spacing-xl;
 
-    h1 {
-        font-size: 2rem;
+    .title {
+        font-size: $font-xl;
         font-weight: bold;
         max-width: 900px;
         line-height: 1.2;
-        animation: fade-in-up 1s ease-in-out;
+        @include animation-fade-in-up;
         display: flex;
         flex-direction: column;
 
         .typing-container {
             display: block;
-            margin-top: 0.5rem;
+            margin-top: $spacing-sm;
         }
     }
 
     .typing {
         color: $success-color;
-        animation: typing 3s steps(40) forwards;
         overflow: hidden;
         white-space: nowrap;
+        animation: typing 3s steps(40) forwards;
         animation: cursor-blink 1s infinite alternate;
     }
 
-    p {
-        font-size: 1rem;
+    .description {
+        font-size: $font-sm;
         max-width: 700px;
-        margin-top: 1rem;
-        opacity: 0.9;
-        animation: fade-in 1.2s ease-in-out;
+        margin-top: $spacing-md;
+        @include animation-fade-in;
     }
 
     .ctaButtons {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 2.5rem;
-        animation: fade-in-up 1.5s ease-in-out;
+        gap: $spacing-md;
+        margin-top: $spacing-lg;
+        @include animation-fade-in-up;
 
         > :first-child {
             @include primary-button($success-color, $text-light-color);
@@ -68,17 +64,26 @@
     }
 
     @include min-breakpoint($breakpoint-md) {
-        h1 {
-            font-size: 3.5rem;
+        .title {
+            font-size: $font-xxl;
         }
 
-        p {
-            font-size: 1.6rem;
+        .description {
+            font-size: $font-md;
         }
 
         .ctaButtons {
             flex-direction: row;
         }
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 

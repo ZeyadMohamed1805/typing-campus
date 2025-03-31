@@ -1,5 +1,7 @@
+@use "../shared/typography" as *;
+
 html {
-    font-size: 16px;
+    font-size: $font-sm;
     overflow-x: hidden;
 }
 

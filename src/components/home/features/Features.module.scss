@@ -1,0 +1,86 @@
+@use "../../../design/shared/animations" as *;
+@use "../../../design/shared/breakpoints" as *;
+@use "../../../design/shared/colors" as *;
+@use "../../../design/shared/typography" as *;
+@use "../../../design/shared/radiuses" as *;
+@use "../../../design/shared/spacing" as *;
+@use "../../../design/shared/shadows" as *;
+
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: $spacing-xxl $spacing-xl;
+    background: linear-gradient(to bottom, $secondary-color, $primary-color);
+    color: $text-light-color;
+    @include animation-fade-in;
+
+    .title {
+        font-size: $font-xl;
+        font-weight: bold;
+        margin-bottom: $spacing-lg;
+        letter-spacing: 1px;
+        @include animation-fade-in-up;
+    }
+
+    .featuresGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: $spacing-md;
+        max-width: 1100px;
+        width: 100%;
+
+        .featureCard {
+            background: $white-faded-color;
+            padding: $spacing-md;
+            border-radius: $border-radius-lg;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+            animation: pop-in 0.6s ease-in-out;
+
+            &:hover {
+                transform: translateY(-$spacing-xs);
+                box-shadow: $shadow-lg;
+            }
+
+            .icon {
+                font-size: $font-xxl;
+                margin-bottom: $spacing-sm;
+                color: $secondary-color;
+            }
+
+            .featureTitle {
+                font-size: $font-lg;
+                font-weight: bold;
+                margin-bottom: $spacing-sm;
+            }
+
+            .featureDesc {
+                font-size: $font-md;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    @include min-breakpoint($breakpoint-sm) {
+        .featuresGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .featureCard {
+            padding: $spacing-sm;
+        }
+    }
+
+    @include min-breakpoint($breakpoint-md) {
+        .title {
+            font-size: $font-xxl;
+        }
+
+        .featuresGrid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

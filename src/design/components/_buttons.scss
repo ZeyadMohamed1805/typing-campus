@@ -1,5 +1,8 @@
 @use "../shared/typography" as *;
 @use "../shared/breakpoints" as *;
+@use "../shared/spacing" as *;
+@use "../shared/transitions" as *;
+@use "../shared/animations" as *;
 
 @mixin primary-button(
     $bg-color,
@@ -9,23 +12,19 @@
     background: $bg-color;
     color: $text-color;
     border: none;
-    padding: 0.75rem 1.5rem; // Smaller buttons on medium screens
-    font-size: 1rem;
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-sm;
     font-family: $font-family;
     cursor: pointer;
-    transition:
-        background 0.3s ease,
-        transform 0.2s ease;
-    animation: fade-in-up 0.8s ease-in-out;
+    @include transition(filter);
+    @include animation-fade-in-up;
 
     &:hover {
-        transform: translateY(-3px);
         filter: brightness(0.8);
     }
 
     @include min-breakpoint($breakpoint-md) {
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
+        font-size: $font-md;
     }
 }
 
@@ -37,22 +36,18 @@
     background: transparent;
     border: 2px solid $bg-color;
     color: $text-color;
-    padding: 0.75rem 1.5rem; // Smaller buttons on medium screens
-    font-size: 1rem;
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-sm;
     font-family: $font-family;
     cursor: pointer;
-    transition:
-        background 0.3s ease,
-        transform 0.2s ease;
-    animation: fade-in-up 0.8s ease-in-out;
+    @include transition(background);
+    @include animation-fade-in-up;
 
     &:hover {
         background: $bg-color;
-        transform: translateY(-3px);
     }
 
     @include min-breakpoint($breakpoint-md) {
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
+        font-size: $font-md;
     }
 }

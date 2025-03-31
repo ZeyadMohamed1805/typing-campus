@@ -18,6 +18,7 @@ const [componentName, targetDir] = args;
 // Convert relative path to absolute path
 const componentPath: string = path.join(
     process.cwd(),
+    "src",
     targetDir,
     componentName.toLowerCase()
 );

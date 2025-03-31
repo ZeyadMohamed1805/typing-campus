@@ -2,7 +2,6 @@
 @use "shared/animations";
 @use "shared/breakpoints";
 @use "shared/colors";
-@use "shared/grid";
 @use "shared/shadows";
 @use "shared/spacing";
 @use "shared/typography";
@@ -15,7 +14,6 @@
 
 // Components
 @use "components/buttons";
-@use "components/cards";
 
 // Utilities
 @use "utilities/visibility";

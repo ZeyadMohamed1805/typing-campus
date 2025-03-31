@@ -1,3 +1,6 @@
+@use "../shared/transitions" as *;
+
+// Animation Keyframes
 @keyframes slide-in {
     from {
         transform: translateX(100%);
@@ -41,11 +44,19 @@
     }
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+// Animation Mixins
+@mixin animation-fade-in() {
+    animation: fade-in $transition-slow ease-in-out;
+}
+
+@mixin animation-fade-in-up() {
+    animation: fade-in-up $transition-slow ease-in-out;
+}
+
+@mixin animation-slide-in() {
+    animation: slide-in $transition-slow ease-in-out;
+}
+
+@mixin animation-bounce-in() {
+    animation: bounce-in $transition-slow ease-in-out;
 }

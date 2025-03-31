@@ -1,17 +1,29 @@
 // Primary Colors
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #28a745;
-$error-color: #dc3545;
-$warning-color: #ffc107;
+$primary-color: rgb(0, 123, 255);
+$primary-faded-color: rgba(0, 123, 255, 0.1);
+$secondary-color: rgb(108, 117, 125);
+$secondary-faded-color: rgba(108, 117, 125, 0.1);
+$success-color: rgb(40, 167, 69);
+$success-faded-color: rgba(40, 167, 69, 0.1);
+$error-color: rgb(220, 53, 69);
+$error-faded-color: rgba(220, 53, 69, 0.1);
+$warning-color: rgb(255, 193, 7);
+$warning-faded-color: rgba(255, 193, 7, 0.1);
 
 // Neutral Colors
-$white-color: #ffffff;
-$black-color: #000000;
-$gray-light-color: #f8f9fa;
-$gray-dark-color: #343a40;
+$white-color: rgb(255, 255, 255);
+$white-faded-color: rgba(255, 255, 255, 0.1);
+$black-color: rgb(0, 0, 0);
+$black-faded-color: rgba(0, 0, 0, 0.1);
+$gray-light-color: rgb(248, 249, 250);
+$gray-faded-light-color: rgba(248, 249, 250, 0.1);
+$gray-dark-color: rgb(52, 58, 64);
+$gray-faded-dark-color: rgba(52, 58, 64, 0.1);
 
 // Text Colors
 $text-primary-color: $black-color;
+$text-primary-faded-color: $black-faded-color;
 $text-secondary-color: $gray-dark-color;
+$text-secondary-faded-color: $gray-faded-dark-color;
 $text-light-color: $gray-light-color;
+$text-light-faded-color: $gray-faded-light-color;

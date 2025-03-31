@@ -1,0 +1,12 @@
+// Transitions
+$transition-fast: 0.2s;
+$transition-medium: 0.4s;
+$transition-slow: 0.6s;
+
+@mixin transition(
+    $property: all,
+    $duration: $transition-fast,
+    $timing: ease-in-out
+) {
+    transition: $property $duration $timing;
+}
