@@ -2,59 +2,61 @@
 @use "../../../design/shared/breakpoints" as *;
 @use "../../../design/shared/colors" as *;
 @use "../../../design/shared/typography" as *;
+@use "../../../design/shared/radiuses" as *;
+@use "../../../design/shared/spacing" as *;
+@use "../../../design/shared/shadows" as *;
 
 .features {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 4rem 2rem;
+    padding: $spacing-xxl $spacing-xl;
     background: linear-gradient(
         to bottom,
         $secondary-color,
         $primary-color
     );;
     color: $text-light-color;
-    animation: fade-in 1s ease-in-out;
+    @include animation-fade-in;
 
     .title {
         font-size: $font-xl;
         font-weight: bold;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
+        margin-bottom: $spacing-lg;
         letter-spacing: 1px;
-        animation: fade-in-up 0.8s ease-in-out;
+        @include animation-fade-in-up;
     }
 
     .featuresGrid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        gap: $spacing-md;
         max-width: 1100px;
         width: 100%;
 
         .featureCard {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: $white-faded-color;
+            padding: $spacing-md;
+            border-radius: $border-radius-lg;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             animation: pop-in 0.6s ease-in-out;
 
             &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                transform: translateY(-$spacing-xs);
+                box-shadow: $shadow-lg;
             }
 
             .icon {
                 font-size: $font-xxl;
-                margin-bottom: 1rem;
+                margin-bottom: $spacing-sm;
                 color: $secondary-color;
             }
 
             .featureTitle {
                 font-size: $font-lg;
                 font-weight: bold;
-                margin-bottom: 1rem;
+                margin-bottom: $spacing-sm;
             }
 
             .featureDesc {
@@ -70,7 +72,7 @@
         }
 
         .featureCard {
-            padding: 1.5rem;
+            padding: $spacing-sm;
         }
     }
 
