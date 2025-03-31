@@ -6,7 +6,7 @@ const Hero = () => {
 
     return (
         <section className={styles.hero}>
-            <h1>
+            <h1 className={styles.title}>
                 <span>Master Your Keyboard.</span>
                 <span className={styles.typingContainer}>
                     <span className={styles.typing}>
@@ -14,7 +14,7 @@ const Hero = () => {
                     </span>
                 </span>
             </h1>
-            <p>
+            <p className={styles.description}>
                 Improve your typing speed, challenge yourself with real-time
                 tests, and track your progress.
             </p>

@@ -10,10 +10,9 @@
     background: $primary-color;
     color: $text-light-color;
     position: relative;
-    overflow-x: hidden;
 
     .logo {
-        font-size: 1.5rem;
+        font-size: $font-lg;
         font-weight: bold;
     }
 
@@ -40,7 +39,7 @@
                 list-style: none;
                 color: $text-light-color;
                 cursor: pointer;
-                font-size: 1rem;
+                font-size: $font-md;
                 transition:
                     color 0.3s ease,
                     transform 0.3s ease;
@@ -98,7 +97,6 @@
         }
     }
 
-    // Overlay effect for menu
     .overlay {
         position: fixed;
         top: 0;
