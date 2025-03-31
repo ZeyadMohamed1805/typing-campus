@@ -23,7 +23,6 @@
         filter: brightness(0.8);
     }
 
-
     @include min-breakpoint($breakpoint-md) {
         font-size: $font-md;
     }

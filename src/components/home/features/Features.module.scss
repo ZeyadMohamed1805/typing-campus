@@ -12,11 +12,7 @@
     align-items: center;
     text-align: center;
     padding: $spacing-xxl $spacing-xl;
-    background: linear-gradient(
-        to bottom,
-        $secondary-color,
-        $primary-color
-    );;
+    background: linear-gradient(to bottom, $secondary-color, $primary-color);
     color: $text-light-color;
     @include animation-fade-in;
 
@@ -39,7 +35,9 @@
             background: $white-faded-color;
             padding: $spacing-md;
             border-radius: $border-radius-lg;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
             animation: pop-in 0.6s ease-in-out;
 
             &:hover {

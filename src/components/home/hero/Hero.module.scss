@@ -12,11 +12,7 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        $primary-color,
-        $secondary-color
-    );
+    background: linear-gradient(to bottom, $primary-color, $secondary-color);
     color: $text-light-color;
     @include animation-fade-in;
     padding: 0 $spacing-xl;
