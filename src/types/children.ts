@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export type TLayoutProps = Readonly<{
+export type TChildrenProps = Readonly<{
     children: ReactNode;
 }>;
