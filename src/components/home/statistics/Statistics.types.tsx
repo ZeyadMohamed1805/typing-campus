@@ -1,28 +1,40 @@
 export type TUseStatisticCardProps = {
-    count: number;
+    props: {
+        count: number;
+    };
 };
 
 export type TUseStatisticCardCountProps = {
-    count: number;
-    isScrolledIntoView: boolean;
+    props: {
+        count: number;
+        isScrolledIntoView: boolean;
+    };
 };
 
 export type TStatisticCardProps = {
-    icon: string;
-    count: number;
-    label: string;
+    props: {
+        label: string;
+        icon: string;
+        count: number;
+    };
 };
 
 export type TStatisticCardCircleProps = {
-    count: number;
-    isScrolledIntoView: boolean;
+    props: {
+        count: number;
+        isScrolledIntoView: boolean;
+    };
 };
 
 export type TStatisticCardContentProps = {
-    icon: string;
-    count: number;
+    props: {
+        icon: string;
+        count: number;
+    };
 };
 
 export type TStatisticCardLabelProps = {
-    label: string;
+    props: {
+        label: string;
+    };
 };

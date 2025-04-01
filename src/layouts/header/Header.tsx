@@ -13,21 +13,25 @@ const Header: React.FC = () => {
 
     return (
         <header className={styles.header}>
-            <HeaderLogo className={styles.logo} />
+            <HeaderLogo />
 
             <HeaderMenuIcon
-                className={styles.menuIcon}
-                onClick={headerData.toggleNavbarState}
+                props={{
+                    onClick: headerData.toggleNavbarState,
+                }}
             />
 
             <HeaderNavigation
-                className={`${styles.nav} ${headerData.isNavbarOpen ? styles.open : ""}`}
+                props={{
+                    className: `${styles.nav} ${headerData.isNavbarOpen ? styles.open : ""}`,
+                }}
             />
 
             <HeaderOverlay
-                condition={headerData.isNavbarOpen}
-                className={styles.overlay}
-                onClick={headerData.toggleNavbarState}
+                props={{
+                    condition: headerData.isNavbarOpen,
+                    onClick: headerData.toggleNavbarState,
+                }}
             />
         </header>
     );

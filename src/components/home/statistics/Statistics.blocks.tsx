@@ -8,9 +8,7 @@ import { useStatisticCard } from "./useStatistics.hooks";
 import styles from "./Statistics.module.scss";
 import { STATISTICS } from "./Statistics.constants";
 
-const StatisticCardCircle = (
-    statisticCardCircleProps: TStatisticCardCircleProps
-) => {
+const StatisticCardCircle = ({ props }: TStatisticCardCircleProps) => {
     return (
         <svg viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" className={styles.background} />
@@ -19,41 +17,31 @@ const StatisticCardCircle = (
                 cy="50"
                 r="45"
                 className={styles.progress}
-                data-count={statisticCardCircleProps.count}
-                data-is-visible={statisticCardCircleProps.isScrolledIntoView}
+                data-count={props.count}
+                data-is-visible={props.isScrolledIntoView}
             />
         </svg>
     );
 };
 
-const StatisticCardContent = (
-    statisticCardContentProps: TStatisticCardContentProps
-) => {
+const StatisticCardContent = ({ props }: TStatisticCardContentProps) => {
     return (
         <div className={styles.statisticCardContent}>
-            <span className={styles.statisticCardIcon}>
-                {statisticCardContentProps.icon}
-            </span>
-            <span className={styles.statisticCardNumber}>
-                {statisticCardContentProps.count}
-            </span>
+            <span className={styles.statisticCardIcon}>{props.icon}</span>
+            <span className={styles.statisticCardNumber}>{props.count}</span>
         </div>
     );
 };
 
-const StatisticCardLabel = (
-    statisticCardLabelProps: TStatisticCardLabelProps
-) => {
-    return (
-        <p className={styles.statisticCardLabel}>
-            {statisticCardLabelProps.label}
-        </p>
-    );
+const StatisticCardLabel = ({ props }: TStatisticCardLabelProps) => {
+    return <p className={styles.statisticCardLabel}>{props.label}</p>;
 };
 
-const StatisticCard = (statisticCardProps: TStatisticCardProps) => {
+const StatisticCard = ({ props }: TStatisticCardProps) => {
     const statisticCardData = useStatisticCard({
-        count: statisticCardProps.count,
+        props: {
+            count: props.count,
+        },
     });
 
     return (
@@ -63,20 +51,25 @@ const StatisticCard = (statisticCardProps: TStatisticCardProps) => {
         >
             <div className={styles.progressCircle}>
                 <StatisticCardCircle
-                    count={statisticCardData.count}
-                    isScrolledIntoView={statisticCardData.isScrolledIntoView}
+                    props={{
+                        count: statisticCardData.count,
+                        isScrolledIntoView:
+                            statisticCardData.isScrolledIntoView,
+                    }}
                 />
 
                 <StatisticCardContent
-                    icon={statisticCardProps.icon}
-                    count={statisticCardData.count}
+                    props={{
+                        icon: props.icon,
+                        count: statisticCardData.count,
+                    }}
                 />
             </div>
-            <StatisticCardLabel {...statisticCardProps} />
+            <StatisticCardLabel props={props} />
         </div>
     );
 };
 
 export const StatisticCards = STATISTICS.map((statistic, index) => (
-    <StatisticCard key={index} {...statistic} />
+    <StatisticCard key={index} props={statistic} />
 ));

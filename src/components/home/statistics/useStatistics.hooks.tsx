@@ -4,19 +4,17 @@ import {
     TUseStatisticCardCountProps,
 } from "./Statistics.types";
 
-const useStatisticCardCount = (
-    useStatisticCardCountProps: TUseStatisticCardCountProps
-) => {
+const useStatisticCardCount = ({ props }: TUseStatisticCardCountProps) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        if (useStatisticCardCountProps.isScrolledIntoView) {
+        if (props.isScrolledIntoView) {
             let start = 0;
-            const increment = Math.ceil(useStatisticCardCountProps.count / 50);
+            const increment = Math.ceil(props.count / 50);
             const interval = setInterval(() => {
                 start += increment;
-                if (start >= useStatisticCardCountProps.count) {
-                    start = useStatisticCardCountProps.count;
+                if (start >= props.count) {
+                    start = props.count;
                     clearInterval(interval);
                 }
                 setCount(start);
@@ -24,10 +22,7 @@ const useStatisticCardCount = (
 
             return () => clearInterval(interval);
         }
-    }, [
-        useStatisticCardCountProps.count,
-        useStatisticCardCountProps.isScrolledIntoView,
-    ]);
+    }, [props.count, props.isScrolledIntoView]);
 
     return { count };
 };
@@ -57,14 +52,14 @@ const useStatisticCardScrollIntoView = () => {
     return { isScrolledIntoView, statisticCardRef };
 };
 
-export const useStatisticCard = (
-    useStatisticCardsProps: TUseStatisticCardProps
-) => {
+export const useStatisticCard = ({ props }: TUseStatisticCardProps) => {
     const { isScrolledIntoView, statisticCardRef } =
         useStatisticCardScrollIntoView();
     const { count } = useStatisticCardCount({
-        count: useStatisticCardsProps.count,
-        isScrolledIntoView,
+        props: {
+            count: props.count,
+            isScrolledIntoView,
+        },
     });
 
     return { count, isScrolledIntoView, statisticCardRef };
