@@ -1,5 +1,5 @@
 import styles from "./Hero.module.scss";
-import useHero from "./useHero";
+import useHero from "./useHero.hooks";
 
 const Hero = () => {
     const heroData = useHero();

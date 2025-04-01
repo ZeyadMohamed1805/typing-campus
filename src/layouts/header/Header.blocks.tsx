@@ -1,13 +1,13 @@
+import styles from "./Header.module.scss";
 import { HEADER_LINKS } from "./Header.constants";
 import {
-    THeaderLogoProps,
     THeaderMenuIconProps,
     THeaderNavigationProps,
     THeaderOverlayProps,
 } from "./Header.types";
 
-export const HeaderLogo = (headerLogoProps: THeaderLogoProps) => {
-    return <div className={headerLogoProps.className}>Typing Campus</div>;
+export const HeaderLogo = () => {
+    return <div className={styles.logo}>Typing Campus</div>;
 };
 
 const HeaderLinks = HEADER_LINKS.map((headerLink) => {
@@ -18,22 +18,17 @@ const HeaderLinks = HEADER_LINKS.map((headerLink) => {
     );
 });
 
-export const HeaderNavigation = (
-    headerNavigationProps: THeaderNavigationProps
-) => {
+export const HeaderNavigation = ({ props }: THeaderNavigationProps) => {
     return (
-        <nav className={headerNavigationProps.className}>
+        <nav className={props.className}>
             <ul>{HeaderLinks}</ul>
         </nav>
     );
 };
 
-export const HeaderMenuIcon = (headerMenuIconProps: THeaderMenuIconProps) => {
+export const HeaderMenuIcon = ({ props }: THeaderMenuIconProps) => {
     return (
-        <div
-            className={headerMenuIconProps.className}
-            onClick={headerMenuIconProps.onClick}
-        >
+        <div className={styles.menuIcon} onClick={props.onClick}>
             <span />
             <span />
             <span />
@@ -41,15 +36,10 @@ export const HeaderMenuIcon = (headerMenuIconProps: THeaderMenuIconProps) => {
     );
 };
 
-export const HeaderOverlay = (headerOverlayProps: THeaderOverlayProps) => {
-    if (!headerOverlayProps.condition) {
+export const HeaderOverlay = ({ props }: THeaderOverlayProps) => {
+    if (!props.condition) {
         return null;
     }
 
-    return (
-        <div
-            className={headerOverlayProps.className}
-            onClick={headerOverlayProps.onClick}
-        />
-    );
+    return <div className={styles.overlay} onClick={props.onClick} />;
 };

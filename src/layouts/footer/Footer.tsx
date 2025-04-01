@@ -5,12 +5,12 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.topRow}>
-                <FooterLogo className={styles.logo} />
+                <FooterLogo />
 
-                <FooterNavigation className={styles.nav} />
+                <FooterNavigation />
             </div>
 
-            <FooterCopyright className={styles.copyright} />
+            <FooterCopyright />
         </footer>
     );
 };

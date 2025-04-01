@@ -1,18 +1,18 @@
-export type THeaderLogoProps = {
-    className: string;
-};
-
 export type THeaderNavigationProps = {
-    className: string;
+    props: {
+        className: string;
+    };
 };
 
 export type THeaderMenuIconProps = {
-    className: string;
-    onClick: () => void;
+    props: {
+        onClick: () => void;
+    };
 };
 
 export type THeaderOverlayProps = {
-    condition: boolean;
-    className: string;
-    onClick: () => void;
+    props: {
+        condition: boolean;
+        onClick: () => void;
+    };
 };
