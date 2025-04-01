@@ -1,0 +1,126 @@
+@use "../../../design/shared/animations" as *;
+@use "../../../design/shared/breakpoints" as *;
+@use "../../../design/shared/colors" as *;
+@use "../../../design/shared/typography" as *;
+@use "../../../design/shared/spacing" as *;
+@use "../../../design/shared/transitions" as *;
+
+.statisticsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-lg $spacing-xl;
+    background: $gray-dark-color;
+    color: $text-light-color;
+    @include animation-fade-in;
+
+    .title {
+        font-size: $font-xl;
+        font-weight: bold;
+        margin-bottom: $spacing-xl;
+        @include animation-fade-in-up;
+    }
+
+    .statisticsGrid {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-lg;
+        flex-wrap: wrap;
+    }
+
+    .statisticCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .progressCircle {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .background {
+            fill: none;
+            stroke: transparent;
+            stroke-width: 8;
+            cx: 50;
+            cy: 50;
+            r: 45;
+        }
+
+        .progress {
+            fill: none;
+            stroke: $success-color;
+            fill: $gray-dark-color;
+            stroke-width: 8;
+            cx: 50;
+            cy: 50;
+            r: 45;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            @include transition(stroke-dashoffset, 2s);
+
+            &[data-is-visible="true"] {
+                animation: progress-fill 2s ease-in-out forwards;
+            }
+        }
+
+        .statisticCardContent {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .statisticCardIcon {
+            font-size: $font-xl;
+            margin-bottom: $spacing-xs;
+        }
+
+        .statisticCardNumber {
+            font-size: $font-lg;
+            font-weight: bold;
+        }
+
+        .statisticCardLabel {
+            font-size: $font-md;
+            font-weight: semibold;
+            margin-top: $spacing-md;
+        }
+    }
+
+    @include min-breakpoint($breakpoint-md) {
+        .title {
+            font-size: $font-xxl;
+        }
+
+        .statisticCard {
+            .progressCircle {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
+}
+
+@keyframes progress-fill {
+    from {
+        stroke-dashoffset: 283;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
