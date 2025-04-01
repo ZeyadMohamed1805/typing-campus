@@ -1,0 +1,67 @@
+@use "../../../design/shared/animations" as *;
+@use "../../../design/shared/breakpoints" as *;
+@use "../../../design/components/buttons" as *;
+@use "../../../design/shared/colors" as *;
+@use "../../../design/shared/spacing" as *;
+@use "../../../design/shared/radiuses" as *;
+@use "../../../design/shared/typography" as *;
+@use "../../../design/shared/transitions" as *;
+
+.actionsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $spacing-xl $spacing-lg;
+    background: $gray-dark-color;
+    color: $text-light-color;
+    @include animation-fade-in;
+
+    .actionsWrapper {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $spacing-lg;
+        border-radius: $border-radius-lg;
+        background: $primary-color;
+    }
+
+    .actionsTitle {
+        font-size: $font-lg;
+        font-weight: bold;
+        margin-bottom: $spacing-md;
+    }
+
+    .actionsDescription {
+        font-size: $font-sm;
+        max-width: 600px;
+        margin-bottom: $spacing-xl;
+    }
+
+    .actionsButtonGroup {
+        display: flex;
+        gap: $spacing-md;
+
+        button {
+            width: 100%;
+            @include primary-button(
+                $success-color,
+                $text-light-color,
+                $font-primary
+            );
+        }
+    }
+
+    @include min-breakpoint($breakpoint-md) {
+        .actionsTitle {
+            font-size: $font-xl;
+        }
+        
+        .actionsDescription {
+            font-size: $font-md;
+        }
+    }
+}

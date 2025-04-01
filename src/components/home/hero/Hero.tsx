@@ -22,7 +22,7 @@ const Hero = () => {
                 <button className={styles.primary}>
                     Start Typing Challenge
                 </button>
-                <button className={styles.secondary}>Learn More</button>
+                <button className={styles.secondary}>Join Now</button>
             </div>
         </section>
     );
