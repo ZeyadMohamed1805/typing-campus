@@ -3,7 +3,7 @@ import styles from "./Features.module.scss";
 
 const Features = () => {
     return (
-        <section className={styles.features}>
+        <section id="features" className={styles.features}>
             <h2 className={styles.title}>Why Choose Our Typing Platform?</h2>
             <div className={styles.featuresGrid}>
                 {FEATURES.map((feature, index) => (

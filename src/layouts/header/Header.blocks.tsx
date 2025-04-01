@@ -12,7 +12,7 @@ export const HeaderLogo = () => {
 
 const HeaderLinks = HEADER_LINKS.map((headerLink) => {
     return (
-        <li key={headerLink.key}>
+        <li key={headerLink.key} className={styles[headerLink.className]}>
             <a href={headerLink.path}>{headerLink.title}</a>
         </li>
     );

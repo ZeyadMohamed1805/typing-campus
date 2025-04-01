@@ -5,7 +5,7 @@ const Hero = () => {
     const heroData = useHero();
 
     return (
-        <section className={styles.hero}>
+        <section id="home" className={styles.hero}>
             <h1 className={styles.title}>
                 <span>Master Your Keyboard.</span>
                 <span className={styles.typingContainer}>
