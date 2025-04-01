@@ -1,7 +1,7 @@
 import styles from "./Footer.module.scss";
 import { CURRENT_YEAR, FOOTER_LINKS } from "./Footer.constants";
 import { Link } from "react-router-dom";
-import hashScroll from "../../events/hashScroll";
+import hashScroll from "../../handlers/hashScroll";
 
 export const FooterLogo = () => {
     return <div className={styles.logo}>Typing Campus</div>;

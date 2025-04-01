@@ -4,6 +4,7 @@
 @use "../../design/shared/shadows" as *;
 @use "../../design/shared/spacing" as *;
 @use "../../design/shared/animations" as *;
+@use "../../design/shared/radiuses" as *;
 @use "../../design/shared/typography" as *;
 @use "../../design/shared/transitions" as *;
 
@@ -42,6 +43,10 @@
             gap: $spacing-lg;
             list-style: none;
 
+            a {
+                text-decoration: none;
+            }
+
             .navLink {
                 color: $text-light-color;
                 font-size: $font-sm;
@@ -54,10 +59,6 @@
                     color: $secondary-color;
                     transform: scale(1.1);
                 }
-
-                a {
-                    text-decoration: none;
-                }
             }
 
             & > :last-child {
@@ -65,9 +66,13 @@
                     $success-color,
                     $white-color,
                     $font-primary,
-                    $spacing-sm $spacing-md,
+                    $spacing-sm 0,
                     $font-sm
                 );
+                
+                a {
+                    padding: $spacing-sm $spacing-md;
+                }
             }
 
             & > :nth-last-child(2) {
@@ -75,9 +80,13 @@
                     $success-color,
                     $white-color,
                     $font-primary,
-                    $spacing-sm $spacing-md,
+                    $spacing-sm 0,
                     $font-sm
                 );
+                
+                a {
+                    padding: $spacing-sm $spacing-md;
+                }
             }
         }
     }

@@ -4,6 +4,7 @@
 @use "../shared/spacing" as *;
 @use "../shared/transitions" as *;
 @use "../shared/animations" as *;
+@use "../shared/radiuses" as *;
 
 @mixin primary-button(
     $bg-color: $success-color,
@@ -18,6 +19,7 @@
     padding: $padding;
     font-size: $font-sm;
     font-family: $font-family;
+    border-radius: $border-radius-md;
     cursor: pointer;
     @include transition(filter);
     @include animation-fade-in-up;
@@ -44,6 +46,7 @@
     padding: $padding;
     font-size: $font-sm;
     font-family: $font-family;
+    border-radius: $border-radius-md;
     cursor: pointer;
     @include transition(background);
     @include animation-fade-in-up;

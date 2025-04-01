@@ -1,12 +1,12 @@
 import { TChildrenProps } from "../types";
-import LayoutProvider from "./layout.provider";
-import RouteProvider from "./route.provider";
+import LayoutProvider from "./layout/Layout.provider";
+import RouterProvider from "./router/Router.provider";
 
 const Provider = ({ children }: TChildrenProps) => {
     return (
-        <RouteProvider>
+        <RouterProvider>
             <LayoutProvider>{children}</LayoutProvider>
-        </RouteProvider>
+        </RouterProvider>
     );
 };
 

@@ -6,7 +6,7 @@ import {
     THeaderOverlayProps,
 } from "./Header.types";
 import { Link } from "react-router-dom";
-import hashScroll from "../../events/hashScroll";
+import hashScroll from "../../handlers/hashScroll";
 
 export const HeaderLogo = () => {
     return <div className={styles.logo}>Typing Campus</div>;
