@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import useHeader from "./useHeader";
+import useHeader from "./useHeader.hooks";
 import {
     HeaderLogo,
     HeaderMenuIcon,
