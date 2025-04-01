@@ -1,7 +1,7 @@
 export const HEADER_LINKS = [
     {
         key: "HEADER_LINK_ONE",
-        path: "#home",
+        path: "/",
         className: "navLink",
         title: "Home",
     },
