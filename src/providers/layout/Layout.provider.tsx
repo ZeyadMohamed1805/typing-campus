@@ -4,9 +4,7 @@ import { CurrentLayout } from "./Layout.blocks";
 const LayoutProvider = ({ children }: TChildrenProps) => {
     return (
         <>
-            <CurrentLayout>
-                {children}
-            </CurrentLayout>
+            <CurrentLayout>{children}</CurrentLayout>
         </>
     );
 };

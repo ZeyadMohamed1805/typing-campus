@@ -1,7 +1,6 @@
 import styles from "./Footer.module.scss";
 import { CURRENT_YEAR, FOOTER_LINKS } from "./Footer.constants";
 import { Link } from "react-router-dom";
-import hashScroll from "../../handlers/hashScroll";
 
 export const FooterLogo = () => {
     return <div className={styles.logo}>Typing Campus</div>;
@@ -9,7 +8,7 @@ export const FooterLogo = () => {
 
 const FooterLinks = FOOTER_LINKS.map((footerLink) => {
     return (
-        <Link key={footerLink.key} to={footerLink.href} onClick={hashScroll}>
+        <Link key={footerLink.key} to={footerLink.href}>
             {footerLink.title}
         </Link>
     );

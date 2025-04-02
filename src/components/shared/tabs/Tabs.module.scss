@@ -1,0 +1,61 @@
+@use "../../../design/shared/radiuses" as *;
+@use "../../../design/shared/spacing" as *;
+@use "../../../design/shared/typography" as *;
+@use "../../../design/shared/colors" as *;
+
+.tabsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tabHeaders {
+    display: flex;
+    justify-content: space-between;
+    background: $primary-faded-color;
+    border-radius: $border-radius-md;
+    padding: $spacing-sm;
+
+    & > :first-child {
+        border-radius: $border-radius-md 0 0 $border-radius-md;
+    }
+
+    & > :last-child {
+        border-radius: 0 $border-radius-md $border-radius-md 0;
+    }
+}
+
+.tabButton {
+    flex: 1;
+    padding: $spacing-sm;
+    border: none;
+    background: none;
+    font-size: $font-md;
+    font-family: $font-primary;
+    font-weight: bold;
+    cursor: pointer;
+    color: $text-light-color;
+    transition:
+        color 0.3s 0.3s ease-in-out,
+        background 0.3s ease-in-out;
+
+    &:hover {
+        background: $secondary-faded-color;
+    }
+}
+
+.active {
+    background: $primary-color;
+
+    &:hover {
+        background: $primary-color;
+    }
+}
+
+.tabContent {
+    margin-top: $spacing-md;
+    background: $primary-faded-color;
+    display: grid;
+    place-items: center;
+    border-radius: $border-radius-md;
+}

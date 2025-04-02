@@ -1,0 +1,21 @@
+@use "../../../../design/shared/breakpoints" as *;
+@use "../../../../design/shared/colors" as *;
+@use "../../../../design/shared/spacing" as *;
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $gray-dark-color;
+
+    .wrapperContainer {
+        width: 100%;
+        height: 100%;
+        max-width: $breakpoint-xl;
+        background-color: $primary-faded-color;
+        padding: 0 $spacing-xl;
+        display: grid;
+        place-items: center;
+    }
+}

@@ -6,7 +6,6 @@ import {
     THeaderOverlayProps,
 } from "./Header.types";
 import { Link } from "react-router-dom";
-import hashScroll from "../../handlers/hashScroll";
 
 export const HeaderLogo = () => {
     return <div className={styles.logo}>Typing Campus</div>;
@@ -15,9 +14,7 @@ export const HeaderLogo = () => {
 const HeaderLinks = HEADER_LINKS.map((headerLink) => {
     return (
         <li key={headerLink.key} className={styles[headerLink.className]}>
-            <Link to={headerLink.path} onClick={hashScroll}>
-                {headerLink.title}
-            </Link>
+            <Link to={headerLink.path}>{headerLink.title}</Link>
         </li>
     );
 });

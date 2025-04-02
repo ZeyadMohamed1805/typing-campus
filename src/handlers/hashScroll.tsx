@@ -1,9 +1,6 @@
-import { MouseEvent } from "react";
 import { extractElementIdFromHashHref } from "../helpers/extractElementIdFromHashHref";
 
-const hashScroll = (event: MouseEvent<HTMLAnchorElement>) => {
-    const hashHref = event.currentTarget.getAttribute("href");
-
+const hashScroll = (hashHref: string) => {
     if (hashHref) {
         const elementId = extractElementIdFromHashHref(hashHref);
 
@@ -16,9 +13,9 @@ const hashScroll = (event: MouseEvent<HTMLAnchorElement>) => {
                     block: "start",
                 });
             }
-        } else {
-            window.scrollTo({ top: 0, behavior: "smooth" });
         }
+    } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 };
 

@@ -1,7 +1,7 @@
-import Footer from "../../layouts/footer/Footer"
-import Header from "../../layouts/header/Header"
-import { useLocation } from "react-router-dom" 
-import { TChildrenProps } from "../../types"
+import Footer from "../../layouts/footer/Footer";
+import Header from "../../layouts/header/Header";
+import { useLocation } from "react-router-dom";
+import { TChildrenProps } from "../../types";
 
 const DefaultLayout = (props: TChildrenProps) => {
     return (
@@ -11,15 +11,11 @@ const DefaultLayout = (props: TChildrenProps) => {
             <Footer />
         </>
     );
-}
+};
 
 const AuthLayout = (props: TChildrenProps) => {
-    return (
-        <>
-            {props.children}
-        </>
-    );
-}
+    return <>{props.children}</>;
+};
 
 export const CurrentLayout = (props: TChildrenProps) => {
     const location = useLocation();
@@ -30,4 +26,4 @@ export const CurrentLayout = (props: TChildrenProps) => {
     }
 
     return <DefaultLayout {...props} />;
-}
+};
