@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { TYPING_TEXTS } from "./Hero.constants";
 import { useNavigate } from "react-router-dom";
 
@@ -40,9 +40,9 @@ export const useHeroAnimatedTypingText = () => {
 export const useHeroAuthNavigation = () => {
     const navigate = useNavigate();
 
-    const handleAuthNavigation = () => {
+    const handleAuthNavigation = useCallback(() => {
         navigate("/auth");
-    };
+    }, [navigate]);
 
     return { handleAuthNavigation };
 }

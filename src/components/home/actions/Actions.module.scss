@@ -41,18 +41,10 @@
         margin-bottom: $spacing-xl;
     }
 
-    .actionsButtonGroup {
-        display: flex;
-        gap: $spacing-md;
-
-        button {
-            width: 100%;
-            @include primary-button(
-                $success-color,
-                $text-light-color,
-                $font-primary
-            );
-        }
+    .actionsCtaButton {
+        @include primary-button($success-color,
+            $text-light-color,
+            $font-primary );
     }
 
     @include min-breakpoint($breakpoint-md) {
