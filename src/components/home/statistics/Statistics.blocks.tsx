@@ -8,6 +8,12 @@ import { useStatisticCard } from "./useStatistics.hooks";
 import styles from "./Statistics.module.scss";
 import { STATISTICS } from "./Statistics.constants";
 
+export const StatisticsHeader = () => {
+    return (
+        <h2 className={styles.title}>Platform Statistics</h2>
+    );
+}
+
 const StatisticCardCircle = ({ props }: TStatisticCardCircleProps) => {
     return (
         <svg viewBox="0 0 100 100">
@@ -38,38 +44,29 @@ const StatisticCardLabel = ({ props }: TStatisticCardLabelProps) => {
 };
 
 const StatisticCard = ({ props }: TStatisticCardProps) => {
-    const statisticCardData = useStatisticCard({
-        props: {
-            count: props.count,
-        },
-    });
+    const statisticCardData = useStatisticCard({ props });
 
     return (
-        <div
-            ref={statisticCardData.statisticCardRef}
-            className={styles.statisticCard}
-        >
+        <div ref={statisticCardData.statisticCardRef} className={styles.statisticCard}>
             <div className={styles.progressCircle}>
-                <StatisticCardCircle
-                    props={{
-                        count: statisticCardData.count,
-                        isScrolledIntoView:
-                            statisticCardData.isScrolledIntoView,
-                    }}
-                />
-
-                <StatisticCardContent
-                    props={{
-                        icon: props.icon,
-                        count: statisticCardData.count,
-                    }}
-                />
+                <StatisticCardCircle props={statisticCardData} />
+                <StatisticCardContent props={{ icon: props.icon, count: statisticCardData.count }} />
             </div>
             <StatisticCardLabel props={props} />
         </div>
     );
 };
 
-export const StatisticCards = STATISTICS.map((statistic, index) => (
-    <StatisticCard key={index} props={statistic} />
-));
+const StatisticCards = () => {
+    return STATISTICS.map((statistic, index) => (
+        <StatisticCard key={index} props={statistic} />
+    ))
+};
+
+export const StatisticsCardsGrid = () => {
+    return (
+        <div className={styles.statisticsGrid}>
+            <StatisticCards />
+        </div>
+    );
+}

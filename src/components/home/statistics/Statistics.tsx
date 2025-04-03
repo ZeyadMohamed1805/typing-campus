@@ -1,11 +1,11 @@
-import { StatisticCards } from "./Statistics.blocks";
+import { StatisticsCardsGrid, StatisticsHeader } from "./Statistics.blocks";
 import styles from "./Statistics.module.scss";
 
 const Statistics = () => {
     return (
         <section id="statistics" className={styles.statisticsSection}>
-            <h2 className={styles.title}>Platform Statistics</h2>
-            <div className={styles.statisticsGrid}>{StatisticCards}</div>
+            <StatisticsHeader />
+            <StatisticsCardsGrid />
         </section>
     );
 };
