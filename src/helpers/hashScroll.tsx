@@ -23,7 +23,6 @@ export const hashScrollByHref = (hashHref: string | null) => {
 }
 
 export const hashScrollByEvent = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     console.log(href);
     
