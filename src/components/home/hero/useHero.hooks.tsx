@@ -41,7 +41,7 @@ export const useHeroAuthNavigation = () => {
     const navigate = useNavigate();
 
     const handleAuthNavigation = useCallback(() => {
-        navigate("/auth");
+        navigate("/auth/register");
     }, [navigate]);
 
     return { handleAuthNavigation };
