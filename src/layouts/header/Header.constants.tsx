@@ -2,31 +2,29 @@ export const HEADER_LINKS = [
     {
         key: "HEADER_LINK_ONE",
         path: "/",
-        className: "navLink",
         title: "Home",
     },
     {
         key: "HEADER_LINK_TWO",
         path: "/#features",
-        className: "navLink",
         title: "Features",
     },
     {
         key: "HEADER_LINK_THREE",
         path: "/#statistics",
-        className: "navLink",
         title: "Statistics",
-    },
+    }
+];
+
+export const HEADER_BUTTONS = [
     {
-        key: "HEADER_LINK_FIVE",
+        key: "HEADER_BUTTON_ONE",
         path: "/auth/login",
-        className: "navButton",
         title: "Login",
     },
     {
-        key: "HEADER_LINK_SIX",
+        key: "HEADER_BUTTON_TWO",
         path: "/auth/register",
-        className: "navButton",
         title: "Register",
-    },
-];
+    }
+]

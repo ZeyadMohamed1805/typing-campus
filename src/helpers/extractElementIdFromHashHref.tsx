@@ -1,6 +1,8 @@
+import { removeTrailingSlashAndHashFromPathname } from "./regex";
+
 export const extractElementIdFromHashHref = (hashHref: string) => {
     if (hashHref) {
-        const elementId = hashHref.slice(1);
+        const elementId = removeTrailingSlashAndHashFromPathname(hashHref);
 
         return elementId;
     }
