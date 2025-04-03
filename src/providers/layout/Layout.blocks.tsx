@@ -6,7 +6,7 @@ import { useHashScrollOnMount } from "./Layout.hooks";
 
 const DefaultLayout = (props: TChildrenProps) => {
     useHashScrollOnMount();
-    
+
     return (
         <>
             <Header />

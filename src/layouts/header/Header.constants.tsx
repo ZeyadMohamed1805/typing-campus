@@ -13,7 +13,7 @@ export const HEADER_LINKS = [
         key: "HEADER_LINK_THREE",
         path: "/#statistics",
         title: "Statistics",
-    }
+    },
 ];
 
 export const HEADER_BUTTONS = [
@@ -26,5 +26,5 @@ export const HEADER_BUTTONS = [
         key: "HEADER_BUTTON_TWO",
         path: "/auth/register",
         title: "Register",
-    }
-]
+    },
+];

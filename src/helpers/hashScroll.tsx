@@ -4,7 +4,7 @@ export const hashScrollByHref = (hashHref: string | null) => {
     if (hashHref) {
         const elementId = extractElementIdFromHashHref(hashHref);
         console.log(elementId);
-        
+
         if (elementId) {
             const targetElement = document.getElementById(elementId);
 
@@ -20,11 +20,11 @@ export const hashScrollByHref = (hashHref: string | null) => {
     }
 
     window.scrollTo({ top: 0, behavior: "smooth" });
-}
+};
 
 export const hashScrollByEvent = (event: React.MouseEvent<HTMLElement>) => {
     const href = event.currentTarget.getAttribute("href");
     console.log(href);
-    
+
     hashScrollByHref(href);
-}
+};

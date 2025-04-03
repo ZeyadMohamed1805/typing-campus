@@ -42,9 +42,11 @@
     }
 
     .actionsCtaButton {
-        @include primary-button($success-color,
+        @include primary-button(
+            $success-color,
             $text-light-color,
-            $font-primary );
+            $font-primary
+        );
     }
 
     @include min-breakpoint($breakpoint-md) {

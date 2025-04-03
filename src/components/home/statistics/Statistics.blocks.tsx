@@ -9,10 +9,8 @@ import styles from "./Statistics.module.scss";
 import { STATISTICS } from "./Statistics.constants";
 
 export const StatisticsHeader = () => {
-    return (
-        <h2 className={styles.title}>Platform Statistics</h2>
-    );
-}
+    return <h2 className={styles.title}>Platform Statistics</h2>;
+};
 
 const StatisticCardCircle = ({ props }: TStatisticCardCircleProps) => {
     return (
@@ -47,10 +45,15 @@ const StatisticCard = ({ props }: TStatisticCardProps) => {
     const statisticCardData = useStatisticCard({ props });
 
     return (
-        <div ref={statisticCardData.statisticCardRef} className={styles.statisticCard}>
+        <div
+            ref={statisticCardData.statisticCardRef}
+            className={styles.statisticCard}
+        >
             <div className={styles.progressCircle}>
                 <StatisticCardCircle props={statisticCardData} />
-                <StatisticCardContent props={{ icon: props.icon, count: statisticCardData.count }} />
+                <StatisticCardContent
+                    props={{ icon: props.icon, count: statisticCardData.count }}
+                />
             </div>
             <StatisticCardLabel props={props} />
         </div>
@@ -60,7 +63,7 @@ const StatisticCard = ({ props }: TStatisticCardProps) => {
 const StatisticCards = () => {
     return STATISTICS.map((statistic, index) => (
         <StatisticCard key={index} props={statistic} />
-    ))
+    ));
 };
 
 export const StatisticsCardsGrid = () => {
@@ -69,4 +72,4 @@ export const StatisticsCardsGrid = () => {
             <StatisticCards />
         </div>
     );
-}
+};

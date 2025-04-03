@@ -1,4 +1,8 @@
-import { ActionsCtaButton, ActionsDescription, ActionsHeader } from "./Actions.blocks";
+import {
+    ActionsCtaButton,
+    ActionsDescription,
+    ActionsHeader,
+} from "./Actions.blocks";
 import styles from "./Actions.module.scss";
 
 const Actions = () => {

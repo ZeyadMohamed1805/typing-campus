@@ -9,4 +9,4 @@ export const useActionsCtaButtonNavigation = () => {
     }, [navigate]);
 
     return { handleAuthNavigation };
-}
+};

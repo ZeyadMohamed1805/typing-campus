@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 import { hashScrollByHref } from "../../helpers/hashScroll";
 import { useLocation } from "react-router-dom";
 

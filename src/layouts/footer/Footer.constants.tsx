@@ -1,7 +1,11 @@
 export const FOOTER_HASH_LINKS = [
     { key: "FOOTER_HASH_LINK_ONE", title: "Home", href: "/" },
     { key: "FOOTER_HASH_LINK_TWO", title: "Features", href: "/#features" },
-    { key: "FOOTER_HASH_LINK_THREE", title: "Statistics", href: "/#statistics" }
+    {
+        key: "FOOTER_HASH_LINK_THREE",
+        title: "Statistics",
+        href: "/#statistics",
+    },
 ];
 
 export const FOOTER_NAVIGATION_LINKS = [
