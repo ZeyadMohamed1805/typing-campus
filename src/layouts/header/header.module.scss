@@ -1,8 +1,10 @@
 @use "../../design/shared/colors" as *;
+@use "../../design/components/buttons" as *;
 @use "../../design/shared/breakpoints" as *;
 @use "../../design/shared/shadows" as *;
 @use "../../design/shared/spacing" as *;
 @use "../../design/shared/animations" as *;
+@use "../../design/shared/radiuses" as *;
 @use "../../design/shared/typography" as *;
 @use "../../design/shared/transitions" as *;
 
@@ -37,10 +39,15 @@
     .nav {
         ul {
             display: flex;
+            align-items: center;
             gap: $spacing-lg;
+            list-style: none;
 
-            li {
-                list-style: none;
+            a {
+                text-decoration: none;
+            }
+
+            .navLink {
                 color: $text-light-color;
                 font-size: $font-sm;
                 cursor: pointer;
@@ -52,15 +59,38 @@
                     color: $secondary-color;
                     transform: scale(1.1);
                 }
+            }
+
+            & > :last-child {
+                @include primary-button(
+                    $success-color,
+                    $white-color,
+                    $font-primary,
+                    $spacing-sm 0,
+                    $font-sm
+                );
 
                 a {
-                    text-decoration: none;
+                    padding: $spacing-sm $spacing-md;
+                }
+            }
+
+            & > :nth-last-child(2) {
+                @include secondary-button(
+                    $success-color,
+                    $white-color,
+                    $font-primary,
+                    $spacing-sm 0,
+                    $font-sm
+                );
+
+                a {
+                    padding: $spacing-sm $spacing-md;
                 }
             }
         }
     }
 
-    // Responsive Styles
     @media (max-width: $breakpoint-md) {
         .menuIcon {
             display: flex;

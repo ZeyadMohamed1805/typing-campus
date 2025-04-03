@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: $font-primary;
 }
 
 * {
@@ -14,7 +16,6 @@
 }
 
 body {
-    font-family: $font-primary;
     color: $text-primary-color;
     background-color: $white-color;
 }

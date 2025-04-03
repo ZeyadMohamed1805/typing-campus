@@ -1,12 +1,16 @@
-export const FOOTER_LINKS = [
-    { key: "FOOTER_LINK_ONE", title: "Home", href: "#" },
-    { key: "FOOTER_LINK_TWO", title: "About", href: "#" },
-    { key: "FOOTER_LINK_THREE", title: "Services", href: "#" },
-    { key: "FOOTER_LINK_FOUR", title: "Contact", href: "#" },
-    { key: "FOOTER_LINK_FIVE", title: "Blog", href: "#" },
-    { key: "FOOTER_LINK_SIX", title: "Careers", href: "#" },
-    { key: "FOOTER_LINK_SEVEN", title: "Privacy Policy", href: "#" },
-    { key: "FOOTER_LINK_EIGHT", title: "Terms of Use", href: "#" },
+export const FOOTER_HASH_LINKS = [
+    { key: "FOOTER_HASH_LINK_ONE", title: "Home", href: "/" },
+    { key: "FOOTER_HASH_LINK_TWO", title: "Features", href: "/#features" },
+    {
+        key: "FOOTER_HASH_LINK_THREE",
+        title: "Statistics",
+        href: "/#statistics",
+    },
+];
+
+export const FOOTER_NAVIGATION_LINKS = [
+    { key: "FOOTER_LINK_FOUR", title: "Login", href: "/auth/login" },
+    { key: "FOOTER_LINK_FIVE", title: "Register", href: "/auth/register" },
 ];
 
 export const CURRENT_YEAR = new Date().getFullYear();

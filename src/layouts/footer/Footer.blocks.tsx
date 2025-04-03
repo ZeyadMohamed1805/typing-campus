@@ -1,20 +1,53 @@
 import styles from "./Footer.module.scss";
-import { CURRENT_YEAR, FOOTER_LINKS } from "./Footer.constants";
+import {
+    CURRENT_YEAR,
+    FOOTER_HASH_LINKS,
+    FOOTER_NAVIGATION_LINKS,
+} from "./Footer.constants";
+import { Link } from "react-router-dom";
+import { hashScrollByEvent } from "../../helpers/hashScroll";
 
 export const FooterLogo = () => {
     return <div className={styles.logo}>Typing Campus</div>;
 };
 
-const FooterLinks = FOOTER_LINKS.map((footerLink) => {
-    return (
-        <a key={footerLink.key} href={footerLink.href}>
-            {footerLink.title}
-        </a>
-    );
-});
+const FooterHashLinks = () => {
+    return FOOTER_HASH_LINKS.map((footerLink) => {
+        return (
+            <li key={footerLink.key} className={styles.navLink}>
+                <Link
+                    key={footerLink.key}
+                    to={footerLink.href}
+                    onClick={hashScrollByEvent}
+                >
+                    {footerLink.title}
+                </Link>
+            </li>
+        );
+    });
+};
+
+const FooterNavigationLinks = () => {
+    return FOOTER_NAVIGATION_LINKS.map((footerLink) => {
+        return (
+            <li key={footerLink.key} className={styles.navLink}>
+                <Link to={footerLink.href}>{footerLink.title}</Link>
+            </li>
+        );
+    });
+};
 
 export const FooterNavigation = () => {
-    return <nav className={styles.nav}>{FooterLinks}</nav>;
+    return (
+        <nav className={styles.nav}>
+            <ul>
+                <FooterHashLinks />
+            </ul>
+            <ul>
+                <FooterNavigationLinks />
+            </ul>
+        </nav>
+    );
 };
 
 export const FooterCopyright = () => {

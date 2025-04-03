@@ -4,6 +4,7 @@
 @use "../../design/shared/typography" as *;
 @use "../../design/shared/transitions" as *;
 @use "../../design/shared/spacing" as *;
+@use "../../design/shared/shadows" as *;
 
 .footer {
     display: flex;
@@ -12,6 +13,7 @@
     text-align: center;
     padding: $spacing-lg $spacing-xl;
     background: $gray-dark-color;
+    box-shadow: $shadow-lg;
     color: $text-light-color;
     @include animation-fade-in;
 
@@ -25,20 +27,25 @@
     .logo {
         font-size: $spacing-lg;
         font-weight: bold;
-        margin-bottom: $spacing-md;
+        margin-bottom: $spacing-xl;
         @include animation-bounce-in;
     }
 
     .nav {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        display: flex;
+        flex-direction: column;
         gap: $spacing-md;
         width: 100%;
-        max-width: 600px;
-        margin-bottom: $spacing-md;
+        margin-bottom: $spacing-xl;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-md;
+            list-style: none;
+        }
 
         a {
-            width: fit-content;
             color: $text-light-color;
             text-decoration: none;
             font-size: $font-sm;
@@ -69,7 +76,23 @@
         }
 
         .nav {
-            grid-template-columns: repeat(4, minmax(120px, 240px));
+            max-width: 300px;
+            display: flex;
+            flex-direction: row;
+            gap: $spacing-xxl;
+            width: 100%;
+            margin-bottom: $spacing-xl;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-md;
+                list-style: none;
+            }
+
+            a {
+                width: fit-content;
+            }
         }
 
         .copyright {

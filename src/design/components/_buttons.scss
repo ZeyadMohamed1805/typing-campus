@@ -1,20 +1,25 @@
 @use "../shared/typography" as *;
+@use "../shared/colors" as *;
 @use "../shared/breakpoints" as *;
 @use "../shared/spacing" as *;
 @use "../shared/transitions" as *;
 @use "../shared/animations" as *;
+@use "../shared/radiuses" as *;
 
 @mixin primary-button(
-    $bg-color,
-    $text-color: $white,
-    $font-family: $font-primary
+    $bg-color: $success-color,
+    $text-color: $white-color,
+    $font-family: $font-primary,
+    $padding: $spacing-md $spacing-lg,
+    $large-font: $font-md
 ) {
     background: $bg-color;
     color: $text-color;
     border: none;
-    padding: $spacing-md $spacing-lg;
+    padding: $padding;
     font-size: $font-sm;
     font-family: $font-family;
+    border-radius: $border-radius-md;
     cursor: pointer;
     @include transition(filter);
     @include animation-fade-in-up;
@@ -24,21 +29,24 @@
     }
 
     @include min-breakpoint($breakpoint-md) {
-        font-size: $font-md;
+        font-size: $large-font;
     }
 }
 
 @mixin secondary-button(
-    $bg-color,
+    $bg-color: $success-color,
     $text-color: $white,
-    $font-family: $font-primary
+    $font-family: $font-primary,
+    $padding: $spacing-md $spacing-lg,
+    $large-font: $font-md
 ) {
     background: transparent;
     border: 2px solid $bg-color;
     color: $text-color;
-    padding: $spacing-md $spacing-lg;
+    padding: $padding;
     font-size: $font-sm;
     font-family: $font-family;
+    border-radius: $border-radius-md;
     cursor: pointer;
     @include transition(background);
     @include animation-fade-in-up;
@@ -48,6 +56,6 @@
     }
 
     @include min-breakpoint($breakpoint-md) {
-        font-size: $font-md;
+        font-size: $large-font;
     }
 }

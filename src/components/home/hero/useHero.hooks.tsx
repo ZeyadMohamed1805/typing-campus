@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { TYPING_TEXTS } from "./Hero.constants";
+import { useNavigate } from "react-router-dom";
 
-const useHero = () => {
+export const useHeroAnimatedTypingText = () => {
     const [activeTypingTextIndex, setActiveTypingTextIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
@@ -36,4 +37,12 @@ const useHero = () => {
     return { displayedText };
 };
 
-export default useHero;
+export const useHeroAuthNavigation = () => {
+    const navigate = useNavigate();
+
+    const handleAuthNavigation = useCallback(() => {
+        navigate("/auth");
+    }, [navigate]);
+
+    return { handleAuthNavigation };
+};
