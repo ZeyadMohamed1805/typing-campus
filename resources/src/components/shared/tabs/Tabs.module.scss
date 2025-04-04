@@ -1,19 +1,22 @@
 @use "../../../../styles/shared/radiuses" as *;
 @use "../../../../styles/shared/spacing" as *;
 @use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/breakpoints" as *;
 @use "../../../../styles/shared/colors" as *;
 
 .tabsContainer {
+    background: $gray-dark-color;
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 600px;
+    border-radius: $border-radius-md;
 }
 
 .tabHeaders {
     display: flex;
     justify-content: space-between;
     background: $primary-faded-color;
-    border-radius: $border-radius-md;
     padding: $spacing-sm;
 
     & > :first-child {
@@ -29,8 +32,8 @@
     flex: 1;
     padding: $spacing-sm;
     border: none;
-    background: none;
-    font-size: $font-md;
+    background: $secondary-faded-color;
+    font-size: $font-sm;
     font-family: $font-primary;
     font-weight: bold;
     cursor: pointer;
@@ -40,7 +43,7 @@
         background 0.3s ease-in-out;
 
     &:hover {
-        background: $secondary-faded-color;
+        background: $white-faded-color;
     }
 }
 
@@ -53,9 +56,8 @@
 }
 
 .tabContent {
-    margin-top: $spacing-md;
     background: $primary-faded-color;
     display: grid;
     place-items: center;
-    border-radius: $border-radius-md;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
 }

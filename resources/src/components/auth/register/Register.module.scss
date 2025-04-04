@@ -1,0 +1,32 @@
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/components/buttons" as *;
+
+.registerForm {
+    width: 100%;
+    min-height: 331.2px;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    animation: fade-in 0.8s ease-in-out;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.submitButton {
+    @include primary-button(
+        $success-color,
+        $white-color,
+        $font-primary,
+        $spacing-sm $spacing-md,
+        $font-xs
+    );
+}

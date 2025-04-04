@@ -1,0 +1,93 @@
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/breakpoints" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/components/buttons" as *;
+
+.loginForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    animation: fade-in 0.8s ease-in-out;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.submitButton {
+    @include primary-button(
+        $success-color,
+        $white-color,
+        $font-primary,
+        $spacing-sm $spacing-md,
+        $font-xs
+    );
+}
+
+.divider {
+    text-align: center;
+    font-size: $font-xs;
+    font-weight: bold;
+    color: $gray-light-color;
+    position: relative;
+    margin: $spacing-md 0;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 1px;
+        background: $gray-light-color;
+        top: 50%;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+    }
+}
+
+.thirdPartySection {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.thirdPartyButton {
+    @include primary-button(
+        $white-color,
+        $black-color,
+        $font-primary,
+        $spacing-md $spacing-lg,
+        $font-xs
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    box-shadow: $shadow-sm;
+    background: $white-color;
+    padding: $spacing-sm $spacing-md;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+        background: darken($white-color, 10%);
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
