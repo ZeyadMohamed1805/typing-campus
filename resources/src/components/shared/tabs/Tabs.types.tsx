@@ -1,11 +1,10 @@
-import { ReactNode } from "react";
+import { JSX } from "react";
 
 export type TTabsProps = {
     props: {
         tabs: Array<{
-            label: string;
-            value: string;
+            header: string;
+            TabPanel: () => JSX.Element;
         }>;
     };
-    children: ReactNode;
 };

@@ -1,0 +1,25 @@
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/spacing" as *;
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: $gray-dark-color;
+    padding: $spacing-md $spacing-lg;
+
+    .wrapperContainer {
+        width: 100%;
+        max-width: 600px;
+        background-color: $primary-faded-color;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-lg;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

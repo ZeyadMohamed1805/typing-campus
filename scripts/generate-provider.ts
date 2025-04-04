@@ -9,7 +9,7 @@ if (!providerName) {
     process.exit(1);
 }
 
-const providerDir = path.join("src/providers");
+const providerDir = path.join("resources/src/providers");
 const providerFile = path.join(providerDir, `${providerName}.provider.tsx`);
 
 // Ensure the providers directory exists
@@ -31,5 +31,5 @@ export default ${providerName};
 
 fs.writeFileSync(providerFile, providerTemplate);
 console.log(
-    `✅ Provider "${providerName}" created successfully in "src/providers/"`
+    `✅ Provider "${providerName}" created successfully in "resources/src/providers/"`
 );

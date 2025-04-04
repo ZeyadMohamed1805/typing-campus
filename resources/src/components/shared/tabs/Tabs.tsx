@@ -1,25 +1,28 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./Tabs.module.scss";
 import { TTabsProps } from "./Tabs.types";
 
-const Tabs = ({ props, children }: TTabsProps) => {
-    const [activeTab, setActiveTab] = useState(props.tabs[0].value);
+const Tabs = ({ props }: TTabsProps) => {
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const ActiveTabPanel = useMemo(() => props.tabs[activeTabIndex].TabPanel, [activeTabIndex, props.tabs]);
 
     return (
         <div className={styles.tabsContainer}>
             <div className={styles.tabHeaders}>
-                {props.tabs.map((tab) => (
+                {props.tabs.map((tab, index) => (
                     <button
-                        key={tab.value}
-                        className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ""}`}
-                        onClick={() => setActiveTab(tab.value)}
+                        key={index}
+                        className={`${styles.tabButton} ${activeTabIndex === index ? styles.active : ""}`}
+                        onClick={() => setActiveTabIndex(index)}
                     >
-                        {tab.label}
+                        {tab.header}
                     </button>
                 ))}
             </div>
 
-            <div className={styles.tabContent}>{children}</div>
+            <div className={styles.tabContent}>
+                <ActiveTabPanel />
+            </div>
         </div>
     );
 };
