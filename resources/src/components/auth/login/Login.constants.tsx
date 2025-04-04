@@ -16,7 +16,7 @@ export const FORM_INPUT_FIELDS = [
     },
     {
         type: "password",
-        name: "confirmPassword",
+        name: "password_confirmation",
         placeholder: "Confirm Password",
         required: true,
     },

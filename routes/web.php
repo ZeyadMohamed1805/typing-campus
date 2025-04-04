@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,3 +14,5 @@ Route::get('/auth/login', function () {
 Route::get('/auth/register', function () {
     return Inertia('Auth');
 });
+
+Route::post('/auth/register', [UserController::class, 'register']);
