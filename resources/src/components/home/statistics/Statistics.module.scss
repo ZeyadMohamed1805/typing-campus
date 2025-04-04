@@ -1,9 +1,9 @@
-@use "../../../design/shared/animations" as *;
-@use "../../../design/shared/breakpoints" as *;
-@use "../../../design/shared/colors" as *;
-@use "../../../design/shared/typography" as *;
-@use "../../../design/shared/spacing" as *;
-@use "../../../design/shared/transitions" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/breakpoints" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/transitions" as *;
 
 .statisticsSection {
     display: flex;

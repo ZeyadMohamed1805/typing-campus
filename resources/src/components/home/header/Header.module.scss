@@ -1,12 +1,12 @@
-@use "../../../design/shared/colors" as *;
-@use "../../../design/components/buttons" as *;
-@use "../../../design/shared/breakpoints" as *;
-@use "../../../design/shared/shadows" as *;
-@use "../../../design/shared/spacing" as *;
-@use "../../../design/shared/animations" as *;
-@use "../../../design/shared/radiuses" as *;
-@use "../../../design/shared/typography" as *;
-@use "../../../design/shared/transitions" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/components/buttons" as *;
+@use "../../../../styles/shared/breakpoints" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/transitions" as *;
 
 .header {
     display: flex;

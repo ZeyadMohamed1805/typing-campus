@@ -1,7 +1,7 @@
-@use "../../../design/shared/radiuses" as *;
-@use "../../../design/shared/spacing" as *;
-@use "../../../design/shared/typography" as *;
-@use "../../../design/shared/colors" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/colors" as *;
 
 .tabsContainer {
     display: flex;

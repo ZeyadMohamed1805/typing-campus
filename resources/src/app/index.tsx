@@ -1,4 +1,4 @@
-import "../design/index.scss";
+import "../../styles/index.scss";
 import axios from "axios";
 import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";

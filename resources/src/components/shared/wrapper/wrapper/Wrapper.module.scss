@@ -1,6 +1,6 @@
-@use "../../../../design/shared/breakpoints" as *;
-@use "../../../../design/shared/colors" as *;
-@use "../../../../design/shared/spacing" as *;
+@use "../../../../../styles/shared/breakpoints" as *;
+@use "../../../../../styles/shared/colors" as *;
+@use "../../../../../styles/shared/spacing" as *;
 
 .wrapper {
     display: grid;
