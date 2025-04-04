@@ -15,4 +15,8 @@ Route::get('/auth/register', function () {
     return Inertia('Auth');
 });
 
+Route::get('/dashboard', function () {
+    return Inertia('Dashboard');
+})->name('dashboard');
+
 Route::post('/auth/register', [UserController::class, 'register']);
