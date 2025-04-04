@@ -8,7 +8,7 @@ import { useHashScrollOnMount } from "../../hooks/useHashScrollOnMount";
 
 const Main = () => {
     useHashScrollOnMount();
-    
+
     return (
         <main>
             <Header />
