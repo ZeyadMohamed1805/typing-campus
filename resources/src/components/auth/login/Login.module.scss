@@ -1,11 +1,11 @@
-@use "../../../../../styles/shared/spacing" as *;
-@use "../../../../../styles/shared/typography" as *;
-@use "../../../../../styles/shared/breakpoints" as *;
-@use "../../../../../styles/shared/colors" as *;
-@use "../../../../../styles/shared/radiuses" as *;
-@use "../../../../../styles/shared/animations" as *;
-@use "../../../../../styles/shared/shadows" as *;
-@use "../../../../../styles/components/buttons" as *;
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/breakpoints" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/components/buttons" as *;
 
 .loginForm {
     width: 100%;

@@ -1,26 +1,13 @@
-import Tabs from "../shared/tabs/Tabs";
-import Login from "./forms/login/Login";
-import Register from "./forms/register/Register";
+import Description from "./description/Description";
+import Forms from "./forms/Forms";
 import Wrapper from "./wrapper/Wrapper";
 
 const Main = () => {
     return (
         <main>
             <Wrapper>
-                <Tabs
-                    props={{
-                        tabs: [
-                            {
-                                header: "Login",
-                                TabPanel: () => <Login />,
-                            },
-                            {
-                                header: "Register",
-                                TabPanel: () => <Register />,
-                            },
-                        ],
-                    }} 
-                />
+                <Description />
+                <Forms />
             </Wrapper>
         </main>
     );

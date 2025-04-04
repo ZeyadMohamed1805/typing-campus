@@ -5,9 +5,12 @@
 @use "../../../../styles/shared/colors" as *;
 
 .tabsContainer {
+    background: $gray-dark-color;
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 600px;
+    border-radius: $border-radius-md;
 }
 
 .tabHeaders {

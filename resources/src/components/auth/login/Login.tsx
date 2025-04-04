@@ -1,6 +1,6 @@
 import styles from "./Login.module.scss";
-import googleIcon from "../../../../../icons/google.svg";
-import linkedinIcon from "../../../../../icons/linkedin.svg";
+import googleIcon from "../../../../icons/google.svg";
+import linkedinIcon from "../../../../icons/linkedin.svg";
 
 const Login = () => {
   const handleGoogleSignIn = () => {
