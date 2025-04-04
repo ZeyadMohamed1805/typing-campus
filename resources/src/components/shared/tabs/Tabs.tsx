@@ -4,7 +4,10 @@ import { TTabsProps } from "./Tabs.types";
 
 const Tabs = ({ props }: TTabsProps) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-    const ActiveTabPanel = useMemo(() => props.tabs[activeTabIndex].TabPanel, [activeTabIndex, props.tabs]);
+    const ActiveTabPanel = useMemo(
+        () => props.tabs[activeTabIndex].TabPanel,
+        [activeTabIndex, props.tabs]
+    );
 
     return (
         <div className={styles.tabsContainer}>

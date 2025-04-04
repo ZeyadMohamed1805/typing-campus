@@ -16,33 +16,10 @@
     animation: fade-in 0.8s ease-in-out;
 }
 
-.section {
+.formFields {
     display: flex;
     flex-direction: column;
     gap: $spacing-sm;
-}
-
-.inputGroup {
-    position: relative;
-
-    input {
-        width: 100%;
-        border: $spacing-xxs solid $secondary-color;
-        border-radius: $border-radius-sm;
-        padding: $spacing-md;
-        font-size: $font-xs;
-        background: $white-color;
-        transition: border 0.3s ease-in-out, transform 0.2s ease-in-out;
-
-        &:focus {
-            border-color: $primary-color;
-            outline: none;
-        }
-
-        @media (min-width: $breakpoint-md) {
-            padding: $spacing-md;
-        }
-    }
 }
 
 .submitButton {
@@ -62,7 +39,7 @@
     color: $gray-light-color;
     position: relative;
     margin: $spacing-md 0;
-    
+
     &::before,
     &::after {
         content: "";
@@ -72,11 +49,11 @@
         background: $gray-light-color;
         top: 50%;
     }
-    
+
     &::before {
         left: 0;
     }
-    
+
     &::after {
         right: 0;
     }
