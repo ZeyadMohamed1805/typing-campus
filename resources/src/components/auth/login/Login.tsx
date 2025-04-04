@@ -1,17 +1,23 @@
 import styles from "./Login.module.scss";
 import { FormDivider, FormFields, FormThirdPartyButtons } from "./Login.blocks";
+import { useLogin } from "./Login.hooks";
+import { FormProvider } from "react-hook-form";
 
 const Login = () => {
+    const loginData = useLogin();
+
     return (
-        <form className={styles.loginForm}>
-            <FormFields />
+        <FormProvider {...loginData.formData}>
+            <form className={styles.loginForm} onSubmit={loginData.onSubmit}>
+                <FormFields />
 
-            <FormDivider />
+                <FormDivider />
 
-            <div className={styles.thirdPartySection}>
-                <FormThirdPartyButtons />
-            </div>
-        </form>
+                <div className={styles.thirdPartySection}>
+                    <FormThirdPartyButtons />
+                </div>
+            </form>
+        </FormProvider>
     );
 };
 

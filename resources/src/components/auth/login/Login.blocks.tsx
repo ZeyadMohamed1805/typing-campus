@@ -1,24 +1,27 @@
 import Input from "../../shared/input/Input";
-import { THIRD_PARTY_BUTTONS } from "./Login.constants";
+import { FORM_INPUT_FIELDS, THIRD_PARTY_BUTTONS } from "./Login.constants";
 import styles from "./Login.module.scss";
 import { TFormThirdPartyButtonProps } from "./Login.types";
+
+const FormInputFields = () => {
+    return FORM_INPUT_FIELDS.map((field, index) => (
+        <Input key={index} props={field} />
+    ));
+};
+
+const FormSubmitButtonField = () => {
+    return (
+        <button type="submit" className={styles.submitButton}>
+            Submit
+        </button>
+    );
+};
 
 export const FormFields = () => {
     return (
         <div className={styles.formFields}>
-            <Input
-                props={{ type: "email", placeholder: "Email", required: true }}
-            />
-            <Input
-                props={{
-                    type: "password",
-                    placeholder: "Password",
-                    required: true,
-                }}
-            />
-            <button type="submit" className={styles.submitButton}>
-                Submit
-            </button>
+            <FormInputFields />
+            <FormSubmitButtonField />
         </div>
     );
 };

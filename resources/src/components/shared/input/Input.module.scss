@@ -27,4 +27,14 @@
             padding: $spacing-md;
         }
     }
+
+    .errorInput {
+        border-color: $error-color;
+    }
+
+    .errorMessage {
+        color: $error-color;
+        font-size: $font-xs;
+        margin-top: $spacing-xs;
+    }
 }
