@@ -3,6 +3,7 @@
 @use "../../../../styles/shared/colors" as *;
 @use "../../../../styles/shared/radiuses" as *;
 @use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/breakpoints" as *;
 @use "../../../../styles/components/buttons" as *;
 
 .registerForm {
@@ -13,6 +14,10 @@
     padding: $spacing-md;
     border-radius: $border-radius-md;
     animation: fade-in 0.8s ease-in-out;
+
+    @media (max-width: $breakpoint-md) {
+        min-height: 404.8px;
+    }
 }
 
 .formFields {
