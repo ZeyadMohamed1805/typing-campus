@@ -17,6 +17,7 @@ const FooterHashLinks = () => {
                 <Link
                     key={footerLink.key}
                     href={footerLink.href}
+                    preserveState={true}
                 >
                     {footerLink.title}
                 </Link>

@@ -15,7 +15,7 @@ const HeaderLinks = () => {
     return HEADER_LINKS.map((headerLink) => {
         return (
             <li key={headerLink.key} className={styles.navLink}>
-                <Link href={headerLink.path}>
+                <Link href={headerLink.path} preserveState={true}>
                     {headerLink.title}
                 </Link>
             </li>
