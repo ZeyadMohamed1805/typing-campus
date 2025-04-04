@@ -7,7 +7,7 @@ const FormInputFields = () => {
     return FORM_INPUT_FIELDS.map((field, index) => (
         <Input key={index} props={field} />
     ));
-}
+};
 
 const FormSubmitButtonField = () => {
     return (
@@ -15,7 +15,7 @@ const FormSubmitButtonField = () => {
             Submit
         </button>
     );
-}
+};
 
 export const FormFields = () => {
     return (

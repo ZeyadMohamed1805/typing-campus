@@ -7,7 +7,7 @@ const Register = () => {
     const registerData = useRegister();
 
     return (
-        <form className={styles.registerForm} onSubmit={registerData.formData.handleSubmit(registerData.onSubmit)}>
+        <form className={styles.registerForm} onSubmit={registerData.onSubmit}>
             <FormProvider {...registerData.formData}>
                 <FormFields />
             </FormProvider>

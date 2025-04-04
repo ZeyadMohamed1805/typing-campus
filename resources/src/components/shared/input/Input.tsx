@@ -9,16 +9,14 @@ const Input = ({ props }: TInputProps) => {
 
     return (
         <div className={styles.inputGroup}>
-            <input 
-                {...registeredInput} 
-                {...props} 
+            <input
+                {...registeredInput}
+                {...props}
                 className={errorMessage ? styles.errorInput : ""}
                 autoComplete="on"
             />
             {errorMessage && (
-                <p className={styles.errorMessage}>
-                    {`${errorMessage}`}
-                </p>
+                <p className={styles.errorMessage}>{`${errorMessage}`}</p>
             )}
         </div>
     );

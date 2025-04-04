@@ -1,10 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import RegisterSchema from "./Register.schema";
+import { LoginSchema } from "./Login.schema";
 
-export const useRegister = () => {
+export const useLogin = () => {
     const formData = useForm({
-        resolver: yupResolver(RegisterSchema),
+        resolver: yupResolver(LoginSchema),
         mode: "all",
     });
 
