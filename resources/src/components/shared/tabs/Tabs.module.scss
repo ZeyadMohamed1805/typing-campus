@@ -58,9 +58,3 @@
     place-items: center;
     border-radius: 0 0 $border-radius-md $border-radius-md;
 }
-
-@media (min-width: $breakpoint-sm) {
-    .tabButton {
-        font-size: $font-md;
-    }
-}
