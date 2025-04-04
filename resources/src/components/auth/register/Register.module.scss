@@ -1,3 +1,57 @@
-.Register {
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/shared/breakpoints" as *;
+@use "../../../../styles/shared/colors" as *;
+@use "../../../../styles/shared/radiuses" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/components/buttons" as *;
 
+.registerForm {
+    width: 100%;
+    min-height: 331.2px;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    animation: fade-in 0.8s ease-in-out;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.inputGroup {
+    position: relative;
+
+    input {
+        width: 100%;
+        border: $spacing-xxs solid $secondary-color;
+        border-radius: $border-radius-sm;
+        padding: $spacing-md;
+        font-size: $font-xs;
+        background: $white-color;
+        transition: border 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+        &:focus {
+            border-color: $primary-color;
+            outline: none;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            padding: $spacing-md;
+        }
+    }
+}
+
+.submitButton {
+    @include primary-button(
+        $success-color,
+        $white-color,
+        $font-primary,
+        $spacing-sm $spacing-md,
+        $font-xs
+    );
 }
