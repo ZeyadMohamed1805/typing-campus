@@ -2,6 +2,7 @@ import "../../styles/index.scss";
 import axios from "axios";
 import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
+import Loading from "../pages/Loading";
 import { TWindow } from "../types/window";
 
 const browserWindow: TWindow = window;
@@ -17,6 +18,9 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props }) {
-        createRoot(el).render(<App {...props} />);
-    },
+        createRoot(el).render(<>
+            <Loading />
+            <App {...props} />
+        </>);
+    }
 });
