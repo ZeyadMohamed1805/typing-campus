@@ -1,11 +1,11 @@
 import * as yup from "yup";
 
 const RegisterSchema = yup.object({
-    firstName: yup
+    first_name: yup
         .string()
         .required("First name is required")
         .min(2, "First name must be at least 2 characters long"),
-    lastName: yup
+    last_name: yup
         .string()
         .required("Last name is required")
         .min(2, "Last name must be at least 2 characters long"),
@@ -17,7 +17,7 @@ const RegisterSchema = yup.object({
         .string()
         .required("Password is required")
         .min(8, "Password must be at least 8 characters long"),
-    confirmPassword: yup
+    password_confirmation: yup
         .string()
         .oneOf([yup.ref("password")], "Passwords must match")
         .required("Confirm password is required"),

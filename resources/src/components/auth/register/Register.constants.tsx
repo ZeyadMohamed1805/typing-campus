@@ -1,13 +1,13 @@
 export const FORM_INPUT_FIELDS = [
     {
         type: "text",
-        name: "firstName",
+        name: "first_name",
         placeholder: "First Name",
         required: true,
     },
     {
         type: "text",
-        name: "lastName",
+        name: "last_name",
         placeholder: "Last Name",
         required: true,
     },
@@ -25,7 +25,7 @@ export const FORM_INPUT_FIELDS = [
     },
     {
         type: "password",
-        name: "confirmPassword",
+        name: "password_confirmation",
         placeholder: "Confirm Password",
         required: true,
     },
