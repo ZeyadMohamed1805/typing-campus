@@ -7,7 +7,11 @@ const Main = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        router.on('start', () => setLoading(true));
+        router.on('start', (event) => { 
+            if (!event.detail.visit.showProgress) {
+                setLoading(true);
+            }
+        });
         router.on('finish', () => setLoading(false));
     }, []);
 
