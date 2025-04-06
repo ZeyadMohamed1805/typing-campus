@@ -1,0 +1,67 @@
+@use "../../../../styles/shared/spacing" as *;
+@use "../../../../styles/shared/shadows" as *;
+@use "../../../../styles/shared/animations" as *;
+@use "../../../../styles/shared/transitions" as *;
+@use "../../../../styles/shared/typography" as *;
+@use "../../../../styles/components/toast" as *;
+
+.toast {
+    &[data-variant="success"] {
+        @include toast-success;
+    }
+
+    &[data-variant="error"] {
+        @include toast-error;
+    }
+
+    &[data-variant="warning"] {
+        @include toast-warning;
+    }
+
+    .message {
+        flex: 1;
+        margin-right: $spacing-md;
+    }
+
+    &.exit {
+        animation: toast-slide-out $transition-medium ease-out forwards;
+    }
+
+    .close {
+        background: transparent;
+        border: none;
+        color: inherit;
+        font-size: $font-md;
+        cursor: pointer;
+        padding: $spacing-xxs;
+        @include transition($transition-fast);
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+@keyframes toast-slide-in {
+    0% {
+        transform: translateY(-20px) scale(0.95);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-slide-out {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-10px) scale(0.95);
+        opacity: 0;
+    }
+}

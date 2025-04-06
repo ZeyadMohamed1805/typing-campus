@@ -6,6 +6,7 @@
 @use "../../../../styles/shared/animations" as *;
 @use "../../../../styles/shared/shadows" as *;
 @use "../../../../styles/components/buttons" as *;
+@use "sass:color";
 
 .loginForm {
     width: 100%;
@@ -73,17 +74,20 @@
         $spacing-md $spacing-lg,
         $font-xs
     );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-sm;
-    box-shadow: $shadow-sm;
-    background: $white-color;
-    padding: $spacing-sm $spacing-md;
-    transition: background 0.3s ease-in-out;
+
+    & {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-sm;
+        box-shadow: $shadow-sm;
+        background: $white-color;
+        padding: $spacing-sm $spacing-md;
+        transition: background 0.3s ease-in-out;
+    }
 
     &:hover {
-        background: darken($white-color, 10%);
+        background: color.adjust($white-color, $lightness: -10%);
     }
 
     img {

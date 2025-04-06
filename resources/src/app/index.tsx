@@ -4,6 +4,7 @@ import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
 import Loading from "../pages/Loading";
 import { TWindow } from "../types/window";
+import Toast from "../components/shared/toast/Toast";
 
 const browserWindow: TWindow = window;
 
@@ -18,9 +19,12 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props }) {
-        createRoot(el).render(<>
-            <Loading />
-            <App {...props} />
-        </>);
-    }
+        createRoot(el).render(
+            <>
+                <Loading />
+                <Toast />
+                <App {...props} />
+            </>
+        );
+    },
 });

@@ -7,8 +7,12 @@ const Main = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        router.on('start', () => setLoading(true));
-        router.on('finish', () => setLoading(false));
+        router.on("start", (event) => {
+            if (!event.detail.visit.showProgress) {
+                setLoading(true);
+            }
+        });
+        router.on("finish", () => setLoading(false));
     }, []);
 
     if (!loading) {
@@ -20,6 +24,6 @@ const Main = () => {
             <Spinner />
         </Overlay>
     );
-}
+};
 
 export default Main;

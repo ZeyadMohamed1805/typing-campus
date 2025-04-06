@@ -28,7 +28,7 @@
     }
 }
 
-.tabButton {
+.tabLink {
     flex: 1;
     padding: $spacing-sm;
     border: none;
@@ -36,6 +36,7 @@
     font-size: $font-sm;
     font-family: $font-primary;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
     color: $text-light-color;
     transition:
