@@ -18,9 +18,11 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props }) {
-        createRoot(el).render(<>
-            <Loading />
-            <App {...props} />
-        </>);
-    }
+        createRoot(el).render(
+            <>
+                <Loading />
+                <App {...props} />
+            </>
+        );
+    },
 });

@@ -19,7 +19,7 @@ export const useRegister = () => {
             onSuccess: (response) => {
                 console.log("User registered successfully!", response);
             },
-            showProgress: false
+            showProgress: false,
         });
     });
 

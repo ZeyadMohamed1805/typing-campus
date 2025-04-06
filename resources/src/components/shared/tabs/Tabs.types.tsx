@@ -1,10 +1,28 @@
-import { JSX } from "react";
+import { Dispatch, JSX, SetStateAction } from "react";
+
+export type TTab = {
+    header: string;
+    path: string;
+    TabPanel: () => JSX.Element;
+};
 
 export type TTabsProps = {
     props: {
-        tabs: Array<{
-            header: string;
-            TabPanel: () => JSX.Element;
-        }>;
+        tabs: Array<TTab>;
+    };
+};
+
+export type TTabHeadersProps = {
+    props: {
+        tabs: Array<TTab>;
+        activeTabIndex: number;
+        setActiveTabIndex: Dispatch<SetStateAction<number>>;
+    };
+};
+
+export type TActiveTabPanel = {
+    props: {
+        tabs: Array<TTab>;
+        activeTabIndex: number;
     };
 };
