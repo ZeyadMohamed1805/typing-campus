@@ -20,7 +20,6 @@ export const useToast = () => {
                 const errorMessage =
                     Object.values(event.detail?.errors)?.[0] ||
                     "Something went wrong";
-                console.log(errorMessage);
 
                 setMessage(errorMessage);
                 setVariant("error");

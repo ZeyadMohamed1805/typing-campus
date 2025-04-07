@@ -10,17 +10,7 @@ export const useRegister = () => {
     });
 
     const onSubmit = formData.handleSubmit((data) => {
-        console.log(data);
-
-        router.post("/auth/register", data, {
-            onError: (response) => {
-                console.error("Validation errors from server:", response);
-            },
-            onSuccess: (response) => {
-                console.log("User registered successfully!", response);
-            },
-            showProgress: false,
-        });
+        router.post("/auth/register", data, { showProgress: false });
     });
 
     return { formData, onSubmit };
