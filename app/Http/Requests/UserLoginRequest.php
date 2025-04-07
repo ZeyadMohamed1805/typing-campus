@@ -18,4 +18,15 @@ class UserLoginRequest extends FormRequest
             'password' => ['bail', 'required', 'string', 'min:8', 'confirmed'],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'Email is required',
+            'password.required' => 'Password is required',
+            'email.email' => 'Invalid email',
+            'password.string' => 'Password is in an invalid format',
+            'password.min' => 'Password must be at least 8 characters',
+        ];
+    }
 }
