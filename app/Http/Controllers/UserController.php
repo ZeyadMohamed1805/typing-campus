@@ -19,7 +19,7 @@ class UserController extends Controller
         
         $errorResponse = $this->userService->register($userDTO);
 
-        if (!$errorResponse) {
+        if ($errorResponse) {
             return redirect()->back()->withErrors($errorResponse);
         }
 

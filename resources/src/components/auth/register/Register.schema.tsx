@@ -1,14 +1,10 @@
 import * as yup from "yup";
 
 const RegisterSchema = yup.object({
-    first_name: yup
+    username: yup
         .string()
-        .required("First name is required")
-        .min(2, "First name must be at least 2 characters long"),
-    last_name: yup
-        .string()
-        .required("Last name is required")
-        .min(2, "Last name must be at least 2 characters long"),
+        .required("Username is required")
+        .min(8, "Username must be at least 8 characters long"),
     email: yup
         .string()
         .email("Invalid email address")

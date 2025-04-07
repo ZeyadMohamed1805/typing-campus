@@ -15,7 +15,7 @@ class UserLoginRequest extends FormRequest
     {
         return [
             'email' => ['bail', 'required', 'email'],
-            'password' => ['bail', 'required', 'string', 'min:8', 'confirmed'],
+            'password' => ['bail', 'required', 'string', 'min:8'],
         ];
     }
 
@@ -23,8 +23,8 @@ class UserLoginRequest extends FormRequest
     {
         return [
             'email.required' => 'Email is required',
-            'password.required' => 'Password is required',
             'email.email' => 'Invalid email',
+            'password.required' => 'Password is required',
             'password.string' => 'Password is in an invalid format',
             'password.min' => 'Password must be at least 8 characters',
         ];

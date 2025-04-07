@@ -14,12 +14,6 @@ export const FORM_INPUT_FIELDS = [
         placeholder: "Password",
         required: true,
     },
-    {
-        type: "password",
-        name: "password_confirmation",
-        placeholder: "Confirm Password",
-        required: true,
-    },
 ];
 
 export const THIRD_PARTY_BUTTONS = [

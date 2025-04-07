@@ -9,8 +9,4 @@ export const LoginSchema = yup.object({
         .string()
         .required("Password is required")
         .min(8, "Password must be at least 8 characters long"),
-    password_confirmation: yup
-        .string()
-        .oneOf([yup.ref("password")], "Passwords must match")
-        .required("Confirm password is required"),
 });

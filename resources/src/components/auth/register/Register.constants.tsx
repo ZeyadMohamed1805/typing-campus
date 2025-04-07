@@ -1,14 +1,8 @@
 export const FORM_INPUT_FIELDS = [
     {
         type: "text",
-        name: "first_name",
-        placeholder: "First Name",
-        required: true,
-    },
-    {
-        type: "text",
-        name: "last_name",
-        placeholder: "Last Name",
+        name: "username",
+        placeholder: "Username",
         required: true,
     },
     {
