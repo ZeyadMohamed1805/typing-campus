@@ -8,7 +8,7 @@
 
 .registerForm {
     width: 100%;
-    min-height: 395.2px;
+    min-height: 331.2px;
     display: flex;
     flex-direction: column;
     padding: $spacing-md;
@@ -16,7 +16,7 @@
     animation: fade-in 0.8s ease-in-out;
 
     @media (max-width: $breakpoint-md) {
-        min-height: 404.8px;
+        min-height: 340.8px;
     }
 }
 

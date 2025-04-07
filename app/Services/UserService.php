@@ -24,7 +24,7 @@ class UserService
         $isUserRegistered = $registeredUser instanceof User;
 
         if (!$isUserRegistered) {
-            $error = 'Registration failed due to system error.';
+            $error = 'Registration failed.';
             return $error;
         }
 
@@ -39,21 +39,21 @@ class UserService
         $isUserNotFound = !$user;
 
         if ($isUserNotFound) {
-            $error = 'Incorrect email or password.';
+            $error = 'Invalid credentials.';
             return $error;
         }
 
         $isUserPasswordIncorrect = !Hash::check($userDTO->password, $user->password);
 
         if ($isUserPasswordIncorrect) {
-            $error = 'Incorrect email or password.';
+            $error = 'Invalid credentials.';
             return $error;
         }
 
         $isUserLoggedIn = Auth::attempt($userDTO->toArray());
 
         if (!$isUserLoggedIn) {
-            $error = 'Login failed due to system error.';
+            $error = 'Login failed.';
             return $error;        
         }
 

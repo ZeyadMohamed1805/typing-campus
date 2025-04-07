@@ -14,8 +14,7 @@ class UserRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['bail', 'required', 'string', 'min:2'],
-            'last_name' => ['bail', 'required', 'string', 'min:2'],
+            'username' => ['bail', 'required', 'string', 'min:8', 'unique:users,username'],
             'email' => ['bail', 'required', 'email', 'unique:users,email'],
             'password' => ['bail', 'required', 'string', 'min:8', 'confirmed'],
         ];
@@ -24,18 +23,16 @@ class UserRegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'first_name.required' => 'First name is required',
-            'last_name.required' => 'Last name is required',
+            'username.required' => 'Username is required',
             'email.required' => 'Email is required',
             'password.required' => 'Password is required',
-            'first_name.string' => 'First name is in an invalid format',
-            'last_name.string' => 'Last name is in an invalid format',
+            'username.string' => 'Username is in an invalid format',
             'password.string' => 'Password is in an invalid format',
-            'first_name.min' => 'First name must be at least 2 characters',
-            'last_name.min' => 'Last name must be at least 2 characters',
+            'username.min' => 'Username must be at least 8 characters',
             'password.min' => 'Password must be at least 8 characters',
             'email.email' => 'Invalid email',
-            'email.unique' => 'This email is already taken',
+            'email.unique' => 'Email is already taken',
+            'username.unique' => 'Username is already taken',
             'password.confirmed' => 'Passwords do not match',
         ];
     }
