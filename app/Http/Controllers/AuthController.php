@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use App\DataTransferObjects\UserLoginDTO;
 use App\DataTransferObjects\UserRegisterDTO;
-use App\Http\Requests\UserLoginRequest;
-use App\Http\Requests\UserRegisterRequest;
-use App\Services\UserService;
+use App\Http\Requests\AuthLoginRequest;
+use App\Http\Requests\AuthRegisterRequest;
+use App\Services\AuthService;
 use Laravel\Socialite\Facades\Socialite;
 
-class UserController extends Controller
+class AuthController extends Controller
 {
     public function __construct(
-        protected UserService $userService
+        protected AuthService $authService
     ) {}
-    public function register(UserRegisterRequest $request)
+    public function register(AuthRegisterRequest $request)
     {
         $userDTO = UserRegisterDTO::fromArray($request->validated());
         
-        $errorResponse = $this->userService->register($userDTO);
+        $errorResponse = $this->authService->register($userDTO);
 
         if ($errorResponse) {
             return redirect()->back()->withErrors($errorResponse);
@@ -27,11 +27,11 @@ class UserController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function login(UserLoginRequest $request)
+    public function login(AuthLoginRequest $request)
     {
         $userDTO = UserLoginDTO::fromArray($request->validated());
 
-        $errorResponse = $this->userService->login($userDTO);
+        $errorResponse = $this->authService->login($userDTO);
 
         if ($errorResponse) {
             return redirect()->back()->withErrors($errorResponse);
@@ -47,7 +47,7 @@ class UserController extends Controller
 
     public function respondThirdPartyLogin($driver)
     {
-        $errorResponse = $this->userService->thirdPartyLogin($driver);
+        $errorResponse = $this->authService->thirdPartyLogin($driver);
 
         if ($errorResponse) {
             return redirect("/auth/login")->withErrors($errorResponse);

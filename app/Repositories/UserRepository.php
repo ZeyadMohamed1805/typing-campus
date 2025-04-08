@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\DataTransferObjects\ThirdPartyUserLoginDTO;
 use App\DataTransferObjects\UserRegisterDTO;
-use App\Models\ThirdPartyUser;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Contracts\User as SocialiteUser;
