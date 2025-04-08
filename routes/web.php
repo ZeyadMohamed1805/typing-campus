@@ -15,7 +15,9 @@ Route::get('/auth/register', function () {
     return Inertia('Auth');
 });
 
-Route::get('/auth/third-party/{driver}', [UserController::class, 'thirdPartyLogin']);
+Route::get('/auth/third-party-login/request/{driver}', [UserController::class, 'requestThirdPartyLogin']);
+
+Route::get('/auth/third-party-login/response/{driver}', [UserController::class, 'respondThirdPartyLogin']);
 
 Route::get('/dashboard', function () {
     return Inertia('Dashboard');

@@ -40,8 +40,19 @@ class UserController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function thirdPartyLogin($driver)
+    public function requestThirdPartyLogin($driver)
     {
         return Socialite::driver($driver)->redirect();
+    }
+
+    public function respondThirdPartyLogin($driver)
+    {
+        $errorResponse = $this->userService->thirdPartyLogin($driver);
+
+        if ($errorResponse) {
+            return redirect("/auth/login")->withErrors($errorResponse);
+        }
+
+        return redirect()->route('dashboard');
     }
 }
