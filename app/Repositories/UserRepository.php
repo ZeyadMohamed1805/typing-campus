@@ -2,9 +2,11 @@
 
 namespace App\Repositories;
 
+use App\DataTransferObjects\ThirdPartyUserLoginDTO;
 use App\DataTransferObjects\UserRegisterDTO;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use Laravel\Socialite\Contracts\User as SocialiteUser;
 
 class UserRepository
 {
@@ -36,5 +38,51 @@ class UserRepository
         }
 
         return $foundUser;
+    }
+
+    public function createOrUpdate(SocialiteUser $user): ?User
+    {
+        $createdOrUpdatedUser = null;
+
+        try {
+            $createdOrUpdatedUser = User::updateOrCreate(
+                ['email' => $user->getEmail()],
+                [
+                    'username' => $user->getName(),
+                    'password' => bcrypt($user->getId()),
+                ]
+            );
+        } catch (\Exception $error) {
+            Log::error('User third party login failed: ' . $error->getMessage());
+        }
+
+        return $createdOrUpdatedUser;
+    }
+
+    public function createWithThirdParty(ThirdPartyUserLoginDTO $userDTO): ?User
+    {
+        $user = $this->findByEmail($userDTO->email);
+
+        if (!$user) {
+            $user = $this->create(new UserRegisterDTO(
+                username: $userDTO->username,
+                email: $userDTO->email,
+                password: $userDTO->password
+            ));
+        }
+
+        if ($user) {
+            try {
+                $user->thirdPartyAccounts()->create([
+                    'driver' => $userDTO->driver,
+                    'driver_user_id' => $userDTO->driverUserId,
+                    'token' => $userDTO->token,
+                ]);
+            } catch (\Exception $error) {
+                Log::error('User third party account creation failed: ' . $error->getMessage());
+            }
+        }
+
+        return $user;
     }
 }

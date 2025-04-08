@@ -16,13 +16,15 @@ export const FORM_INPUT_FIELDS = [
     },
 ];
 
-export const THIRD_PARTY_BUTTONS = [
+export const THIRD_PARTY_LINKS = [
     {
         icon: googleIcon,
         title: "Continue with Google",
+        path: "/auth/third-party-login/request/google",
     },
     {
         icon: linkedinIcon,
         title: "Continue with LinkedIn",
+        path: "/auth/third-party-login/request/linkedin",
     },
 ];

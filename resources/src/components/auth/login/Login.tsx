@@ -1,5 +1,5 @@
 import styles from "./Login.module.scss";
-import { FormDivider, FormFields, FormThirdPartyButtons } from "./Login.blocks";
+import { FormDivider, FormFields, FormThirdPartyLinks } from "./Login.blocks";
 import { useLogin } from "./Login.hooks";
 import { FormProvider } from "react-hook-form";
 
@@ -14,7 +14,7 @@ const Login = () => {
                 <FormDivider />
 
                 <div className={styles.thirdPartySection}>
-                    <FormThirdPartyButtons />
+                    <FormThirdPartyLinks />
                 </div>
             </form>
         </FormProvider>

@@ -1,7 +1,7 @@
 import Input from "../../shared/input/Input";
-import { FORM_INPUT_FIELDS, THIRD_PARTY_BUTTONS } from "./Login.constants";
+import { FORM_INPUT_FIELDS, THIRD_PARTY_LINKS } from "./Login.constants";
 import styles from "./Login.module.scss";
-import { TFormThirdPartyButtonProps } from "./Login.types";
+import { TFormThirdPartyLinkProps } from "./Login.types";
 
 const FormInputFields = () => {
     return FORM_INPUT_FIELDS.map((field, index) => (
@@ -30,17 +30,17 @@ export const FormDivider = () => {
     return <div className={styles.divider}>or</div>;
 };
 
-const FormThirdPartyButton = ({ props }: TFormThirdPartyButtonProps) => {
+const FormThirdPartyLink = ({ props }: TFormThirdPartyLinkProps) => {
     return (
-        <button type="button" className={styles.thirdPartyButton}>
+        <a className={styles.thirdPartyLink} href={props.path}>
             <img src={props.icon} alt="Google Logo" />
             {props.title}
-        </button>
+        </a>
     );
 };
 
-export const FormThirdPartyButtons = () => {
-    return THIRD_PARTY_BUTTONS.map((button, index) => (
-        <FormThirdPartyButton key={index} props={button} />
+export const FormThirdPartyLinks = () => {
+    return THIRD_PARTY_LINKS.map((link, index) => (
+        <FormThirdPartyLink key={index} props={link} />
     ));
 };
