@@ -7,6 +7,7 @@ use App\DataTransferObjects\UserRegisterDTO;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\UserRegisterRequest;
 use App\Services\UserService;
+use Laravel\Socialite\Facades\Socialite;
 
 class UserController extends Controller
 {
@@ -37,5 +38,10 @@ class UserController extends Controller
         }
 
         return redirect()->route('dashboard');
+    }
+
+    public function thirdPartyLogin($driver)
+    {
+        return Socialite::driver($driver)->redirect();
     }
 }
