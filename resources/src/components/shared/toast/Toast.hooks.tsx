@@ -1,54 +1,41 @@
-import { router } from "@inertiajs/react";
-import { useEffect, useRef, useState } from "react";
-import { ToastVariant } from "./Toast.types";
+import { usePage } from "@inertiajs/react";
+import { useEffect, useReducer, useRef } from "react";
+import { TOAST_HIDE_TIMEOUT, TOAST_INITIAL_STATE } from "./Toast.constants";
+import { toastReducer } from "./Toast.reducer";
+import { EToastActionTypes, EToastVariants } from "./Toast.enums";
 
 export const useToast = () => {
-    const [message, setMessage] = useState("Something went wrong");
-    const [isDisplayed, setIsDisplayed] = useState(false);
-    const [isHiding, setIsHiding] = useState(false);
-    const [variant, setVariant] = useState<ToastVariant>("error");
-
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const [toastState, dispatchToast] = useReducer(toastReducer, TOAST_INITIAL_STATE);
     const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-    const isListenerAttached = useRef(false);
+    const { props } = usePage();
 
     useEffect(() => {
-        if (!isListenerAttached.current) {
-            isListenerAttached.current = true;
+        const errorMessage = Object.values(props.errors)[0];
 
-            router.on("error", (event) => {
-                const errorMessage =
-                    Object.values(event.detail?.errors)?.[0] ||
-                    "Something went wrong";
-
-                setMessage(errorMessage);
-                setVariant("error");
-                setIsDisplayed(true);
-                setIsHiding(false);
-
-                if (timeoutRef.current) clearTimeout(timeoutRef.current);
-                if (hideTimeoutRef.current)
-                    clearTimeout(hideTimeoutRef.current);
-
-                timeoutRef.current = setTimeout(() => handleClose(), 5000);
+        if (errorMessage) {
+            dispatchToast({
+                type: EToastActionTypes.SHOW,
+                payload: {
+                    message: errorMessage,
+                    variant: EToastVariants.ERROR,
+                },
             });
         }
 
         return () => {
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-            if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
+            if (hideTimeoutRef.current) {
+                clearTimeout(hideTimeoutRef.current);
+            }
         };
-    }, []);
+    }, [props.errors]);
 
     const handleClose = () => {
-        setIsHiding(true);
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        dispatchToast({ type: EToastActionTypes.HIDE });
 
         hideTimeoutRef.current = setTimeout(() => {
-            setIsDisplayed(false);
-            setIsHiding(false);
-        }, 400);
+            dispatchToast({ type: EToastActionTypes.RESET });
+        }, TOAST_HIDE_TIMEOUT);
     };
 
-    return { message, isDisplayed, isHiding, variant, handleClose };
+    return { ...toastState, handleClose };
 };
