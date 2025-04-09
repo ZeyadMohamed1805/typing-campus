@@ -8,6 +8,7 @@ export const ToastMessage = ({ props }: TToastMessageProps) => {
 export const ToastCloseButton = ({ props }: TToastCloseButtonProps) => {
     return (
         <button
+            type="button"
             className={styles.close}
             onClick={props.handleClose}
             aria-label="Close Toast"
