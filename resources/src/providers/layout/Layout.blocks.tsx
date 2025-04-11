@@ -1,11 +1,13 @@
 import { usePage } from "@inertiajs/react";
 import { JSX } from "react";
 import { TChildrenProps } from "../../types";
+import Sidebar from "../../layout/sidebar/Sidebar";
+import styles from "./Layout.module.scss";
 
 const DashboardLayout = ({ children }: TChildrenProps) => {
     return (
-        <div>
-            DashboardLayout
+        <div className={styles.dashboardLayout}>
+            <Sidebar />
             {children}
         </div>
     );
@@ -20,7 +22,7 @@ export const ActiveLayout = ({ children }: TChildrenProps) => {
             ActiveLayout = DashboardLayout;
             break;
         default:
-            ActiveLayout = () => <></>;
+            ActiveLayout = ({ children }: TChildrenProps) => <>{children}</>;
     }
 
     return (
